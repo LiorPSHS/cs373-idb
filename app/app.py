@@ -9,48 +9,69 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = 'False'
 db = SQLAlchemy(app)
 manager = Manager(app)
 
-class Book(db.Model):
-	__tablename__ = 'books'
+class Paper(db.Model):
+	__tablename__ = 'papers'
 	id = db.Column(db.Integer, primary_key=True)
 	title = db.Column(db.String)
-	author_id = db.Column(db.Integer, db.ForeignKey('authors.id'))
-	price = db.Column(db.Float)
-	type = db.Column(db.String)
+	authors = db.Column(db.String)
+	journal = db.Column(db.String)
+	year = db.Column(db.Int, db.ForeignKey('years.id'))
+	abstract = db.Column(db.String)
 
 	def __repr__(self):
-		return '<Book %r>' % self.title
+		return '<Paper %r>' % self.title
 
-class Author(db.Model):
-	__tablename__ = 'authors'
+class Journal(db.Model):
+	__tablename__ = 'countries'
 	id = db.Column(db.Integer, primary_key=True)
 	name = db.Column(db.String)
-	birth_date = db.Column(db.Date)
-	bio = db.Column(db.Text)
-	books = db.relationship('Book', backref='author')
+	papers = db.Column(db.Integer)
+	top_subject = db.Column(db.String)
+	top_year = db.Column(db.Integer)
+	top_country = db.Column(db.String)
 
 	def __repr__(self):
-		return '<Author %r>' % self.name
+		return '<Country %r>' % self.name
+
+class Year(db.Model):
+	__tablename__ = 'years'
+	id = db.Column(db.Integer, primary_key=True)
+	name = db.Column(db.String)
+	papers = db.Column(db.Integer)
+	top_subject = db.Column(db.String)
+	top_keyword = db.Column(db.String)
+	top_journal = db.Column(db.String)
+
+
+	def __repr__(self):
+		return '<Year %r>' % self.name
 
 @app.route('/')
 def index():
         return render_template('index.html')
 
-@app.route('/books/')
+@app.route('/years')
 def books():
-	b = Book.query.all()
-	return render_template('books.html', books=b)
+	b = Year.query.all()
+	return render_template('years.html', books=b)
 
-@app.route('/authors')
-def authors():
-	a = Author.query.all()
-	return render_template('authors.html', authors=a)
+@app.route('/countries')
+def countries():
+	a = Country.query.all()
+	return render_template('countries.html', countries=a)
+
+@app.route('/papers')
+def papers():
+	c = Paper.query.all()
+	return render_template('papers.html', papers=c)
 
 def shell_context():
 	context = {
 		'app': app,
 		'db': db,
-		'Book': Book,
-		'Author': Author
+		'Paper': Paper,
+		'Country': Country,
+		'Year' : Year
 	}
 	return context
 
