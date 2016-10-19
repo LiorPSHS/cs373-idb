@@ -70,17 +70,6 @@ Eric/Addison
 
 Eric/Addison, describe unit tests
 
-# Tools
-
-We used the following tools to help us throughout our development process throughout the project:
- - Slack: for messaging and communication
- - NameCheap: getting a free domain name
- - DigitalOcean - hosting the server using a Droplet
- - Flask: a python framework for deploying our web server
- - Apiary - documenting the API that we will be implementing to fetch data from the database
- - Bootstrap - CSS/JavaScript library to beautify and standardize the look of our website
- - Bootstrap [Yeti Theme](https://bootswatch.com/yeti/) - a specific Bootstrap theme that we used
-
 # Hosting
 
 To set up hosting, we used tools that were recommended in the project description, namely DigitalOcean, Flask, and NameCheap. Additionally, the guide provided by brpowell on Github was also very useful as a guide. The following is an outline of the all of the major tools that we used, and our process in how we used those tools.
@@ -113,6 +102,25 @@ The tutorial also suggested that we install a package called `virtualvenv` and c
 
 Note that this is simply an explanation of how we were able to use DigitalOcean to set up the hosting server, with some sample content. The actual front-end web development is described in the Web Design section.
 
-## NameCheap and domain integration
+## Domain integration
 
+### NameCheap
 
+Using [NameCheap](https://www.namecheap.com/), we were able to get a free `.me` domain name to host our site. We decided on the domain name `researchpapers.me`, as it was available and quite fitting for the topic that we are covering. After registering the domain name, we had to connect it with our DigitalOcean droplet by changing the DNS settings from the NameCheap dashboard. Specifically, the A record value was set to the IP address provided by the droplet. 
+
+Furthermore, we had to make some changes in DigitalOcean as well. After adding the domain to our DigitalOcean account through the Networking tab, we had to once again associate it with our droplet by linking the appropriate IP address. At this point, our domain name served as an alias for the IP address; from both URLs we could see the Apache2 Ubuntu default page.  
+
+### Updating the VirtualHost
+
+The final step was to update the VirutalHost so that our Flask web application would display properly when accessed through our NameCheap domain name. Once again, brpowell's tutorial provided us with a base template for the virtual host file, as well as instructions on how to activate it and connect with Flask. The most important changes that we had to make were to set the `ServerName` field in the file to `researchpapers.me`, and creating/linking the approrpriate `.wsgi` file. These two steps allowed us to serve our Flask application through the domain name that we registered. 
+
+# Tools
+
+We used the following tools to help us throughout our development process throughout the project:
+ - Slack: for messaging and communication
+ - NameCheap: getting a free domain name
+ - DigitalOcean - hosting the server using a Droplet
+ - Flask: a python framework for deploying our web server
+ - Apiary - documenting the API that we will be implementing to fetch data from the database
+ - Bootstrap - CSS/JavaScript library to beautify and standardize the look of our website
+ - Bootstrap [Yeti Theme](https://bootswatch.com/yeti/) - a specific Bootstrap theme that we used
