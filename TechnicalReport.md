@@ -23,7 +23,7 @@ However, countries also did a poor job of meeting our new-found criteria. Many, 
 Journals contain conveniently accessed and extremely relevant information when grouped with the other two pillars. Journals vary their rate of publication over time and the "publications by year" list, as pulled from the database, comes sorted by popularity. This means that our connection: Journal->Year is both cheap and relevant. Journals also tend to prefer certain subjects over others and, once again, this list of subjects is sorted by popularity. As such our Journal->Subject connection is also both cheap and relevant.
 
 ## Selecting our characteristics
-When choosing what characteristics to attach to each pillar, we once again had specific criteria. First, our characteristics must be conveniently reachable from our database. This one is not as bad as it seems, as we are building the database, and can structure it according to the characteristics we choose. Second, at least one characteristics in each set must provide some conceptual link to each other set. Third, the information cannot be worthless. (irrelevant in any context)
+When choosing what characteristics to attach to each pillar, we once again had specific criteria. First, our characteristics must be conveniently reachable from our database. This one is not as bad as it seems, as we are building the database, and can structure it according to the characteristics we choose. Second, for each pillar, for other pillar, at least one characteristic of the former must connect to each of the latter. Third, the information cannot be worthless. (irrelevant in any context)
 
 Paper's Characteristics:
  - Title > Relevant, useful, exactly one per paper.
