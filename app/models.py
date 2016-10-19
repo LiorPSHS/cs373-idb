@@ -24,8 +24,8 @@ class Paper(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	title = db.Column(db.String)
 	authors = db.Column(db.String)
-	journal = db.Column(db.Int,db.ForeignKey('journals.id'))
-	year = db.Column(db.Int, db.ForeignKey('years.id'))
+	journal = db.Column(db.Integer ,db.ForeignKey('journals.id'))
+	year = db.Column(db.Integer, db.ForeignKey('years.id'))
 	abstract = db.Column(db.String)
 
 	def __repr__(self):

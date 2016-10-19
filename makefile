@@ -33,4 +33,7 @@ clean:
 	find . -type d -name "__pycache__" -delete
 
 models.html:
-	venv/bin/python -m pydoc -w app/models.py
+	app/venv/bin/python -m pydoc -w app/models.py
+
+IDB1.log:
+	git log > IDB1.log

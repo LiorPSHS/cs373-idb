@@ -1,0 +1,81 @@
+FORMAT: 1A
+HOST: https://app.apiary.io/utcs373f/
+
+# Research Papers
+
+Research Papers is a API to query the attributes of papers, the journals they were written in, and the details of specific years worth of papers.
+## Paper [/papers/{paper_id}]
++ Parameters
+    + paper_id (number) - ID of the paper in the form of an integer
+### Obtain a Specific Paper [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id" : 1,
+                "title" : "Paper",
+                "authors" : "Steve",
+                "journal" : 1,
+                "year" : 1995,
+                "abstract" : "This is a paper"
+            }
+        ]
+
+## Journal [/journals/{journal_id}]
++ Parameters
+    + journal_id (number) - ID of the journal in the form of an integer
+### Obtain a Specific Journal [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id" : 1,
+                "name" : "Frank's Journal",
+                "num_papers" : 452,
+                "top_subject" : "Physics",
+                "top_year" : 1995,
+                "top_country" : "United States of America"
+                "papers" : [
+                    {
+                        "id" : 1,
+                        "name" : "Paper"
+                    }
+                    
+                    {
+                        "id" : 2,
+                        "name" : "Fying in the sky"
+                    }
+                
+                ]
+            }
+        ]
+## Year [/years/{year_id}]
++ Parameters
+    + year_id (number) - ID of the year in the form of an integer
+### Obtain a Specific Year [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id" : 1995,
+                "num_papers" : 45,
+                "top_subject" : "Physics",
+                "top_keyword" : "Gravity",
+                "top_journal" : "Frank's Journal"
+                "papers" : [
+                    {
+                        "id" : 1,
+                        "name" : "Paper"
+                    }
+                    
+                    {
+                        "id" : 2,
+                        "name" : "Fying in the sky"
+                    }
+                
+                ]
+            }
+        ]
