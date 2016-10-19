@@ -15,18 +15,25 @@ def index():
 
 @app.route('/years')
 def years():
-	b = Year.query.all()
-	return render_template('years.html', years=b)
+	#b = Year.query.all()
+	#return render_template('years.html', years=b)
+	return render_template('years.html')
 
 @app.route('/journals')
 def countries():
-	a = Journal.query.all()
-	return render_template('journals.html', journals=a)
+	#a = Journal.query.all()
+	#return render_template('journals.html', journals=a)
+	return render_template('journals.html')
 
 @app.route('/papers')
 def papers():
-	c = Paper.query.all()
-	return render_template('papers.html', papers=c)
+	#c = Paper.query.all()
+	#return render_template('papers.html', papers=c)
+	return render_template('papers.html')
+
+@app.route('/header.html')
+def header():
+	return render_template('header.html')
 
 def shell_context():
 	context = {

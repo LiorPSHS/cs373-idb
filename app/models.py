@@ -24,8 +24,8 @@ class Paper(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	title = db.Column(db.String)
 	authors = db.Column(db.String)
-	journal = db.Column(db.Int,db.ForeignKey('journals.id'))
-	year = db.Column(db.Int, db.ForeignKey('years.id'))
+	journal = db.Column(db.Integer,db.ForeignKey('journals.id'))
+	year = db.Column(db.Integer, db.ForeignKey('years.id'))
 	abstract = db.Column(db.String)
 
 	def __repr__(self):
@@ -39,7 +39,7 @@ class Journal(db.Model):
 	top_subject = db.Column(db.String)
 	top_year = db.Column(db.Integer,db.ForeignKey("years.id"))
 	top_country = db.Column(db.String)
-	papers = db.relationship('Paper', secondary=journal_game, backref='journals')
+	papers = db.relationship('Paper', secondary=journal_paper, backref='journals')
 
 	def __repr__(self):
 		return '<Journal %r>' % self.name
@@ -52,7 +52,7 @@ class Year(db.Model):
 	top_subject = db.Column(db.String)
 	top_keyword = db.Column(db.String)
 	top_journal = db.Column(db.Integer, db.ForeignKey("journals.id"))
-	papers = db.relationship('Paper', secondary=year_game, backref='years')
+	papers = db.relationship('Paper', secondary=year_paper, backref='years')
 
 
 	def __repr__(self):
