@@ -56,7 +56,8 @@ class Journal(db.Model):
 class Year(db.Model):
 	"""
 	a model for a specific year
-	id: the year
+	id: the unique id for the year
+	year: the year
 	num_papers: the number of papers published that year
 	top_subject: the most published subject that year
 	top_keyword: the most published keyword in that year
@@ -64,6 +65,7 @@ class Year(db.Model):
 	"""
 	__tablename__ = 'years'
 	id = db.Column(db.Integer, primary_key=True)
+	year = db.Column(db.Integer)
 	num_papers = db.Column(db.Integer)
 	top_subject = db.Column(db.String)
 	top_keyword = db.Column(db.String)
