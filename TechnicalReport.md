@@ -14,7 +14,7 @@
 # Design
 
 ## Selecting our subjects
-When choosing pillars we ended up making several changes along the way. These changes were driven by three main criteria. First, that our pillar be reachable by a direct database query. Second, that our pillar's characteristics be reachable from a direct database query, and that they not require a prohibitively large amount of additional work to obtain. Third, that our pillars contain characteristics capable of connecting them.
+When choosing pillars we ended up making several changes along the way. These changes were driven by three main criteria. First, that our pillar be reachable by a direct database query. Second, that our pillar's characteristics be reachable from a direct database query without requiring a prohibitive amount of work. Third, that our pillars contain characteristics capable of connecting them.
 
 When going in (and posting our topics on piazza) we were planning on using "Authors" as a pillar. However, we quickly discovered that individual authors were not directly reachable as a query. Instead, each piece of information describing a paper contained a string that could have one or more authors, deliniated by inconsistent delimiters! What this would mean, is that to build a database of Authors from the source we had chosen, we would have had to get the information for every single paper, and parsed the author string (in an only arguably valid way) millions of times. So many calls is simply prohibitive, and we instead migrated the pillar to "Countries."
 
