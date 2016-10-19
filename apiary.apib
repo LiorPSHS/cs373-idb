@@ -1,80 +1,81 @@
 FORMAT: 1A
-HOST: http://polls.apiblueprint.org/
+HOST: https://app.apiary.io/utcs373f/
 
-# UTCS373F
+# Research Papers
 
-Polls is a simple API allowing consumers to view polls and vote in them.
-
-## Questions Collection [/questions]
-
-### List All Questions [GET]
+Research Papers is a API to query the attributes of papers, the journals they were written in, and the details of specific years worth of papers.
+## Paper [/papers/{paper_id}]
++ Parameters
+    + paper_id (number) - ID of the paper in the form of an integer
+### Obtain a Specific Paper [GET]
 
 + Response 200 (application/json)
 
         [
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
+                "id" : 1,
+                "title" : "Paper",
+                "authors" : "Steve",
+                "journal" : 1,
+                "year" : 1995,
+                "abstract" : "This is a paper"
             }
         ]
 
-### Create a New Question [POST]
+## Journal [/journals/{journal_id}]
++ Parameters
+    + journal_id (number) - ID of the journal in the form of an integer
+### Obtain a Specific Journal [GET]
 
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
++ Response 200 (application/json)
 
-+ Request (application/json)
-
-        {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
-        }
-
-+ Response 201 (application/json)
-
-    + Headers
-
-            Location: /questions/2
-
-    + Body
-
+        [
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
+                "id" : 1,
+                "name" : "Frank's Journal",
+                "numPapers" : 452,
+                "top_subject" : "Physics",
+                "top_year" : 1995,
+                "top_country" : "United States of America"
+                "papers" : [
                     {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
+                        "id" : 1,
+                        "name" : "Paper"
                     }
+                    
+                    {
+                        "id" : 2,
+                        "name" : "Fying in the sky"
+                    }
+                
                 ]
             }
+        ]
+## Year [/years/{year_id}]
++ Parameters
+    + year_id (number) - ID of the year in the form of an integer
+### Obtain a Specific Year [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id" : 1995,
+                "numPapers" : 45,
+                "top_subject" : "Physics",
+                "top_keyword" : "Gravity",
+                "top_journal" : "Frank's Journal"
+                "papers" : [
+                    {
+                        "id" : 1,
+                        "name" : "Paper"
+                    }
+                    
+                    {
+                        "id" : 2,
+                        "name" : "Fying in the sky"
+                    }
+                
+                ]
+            }
+        ]
