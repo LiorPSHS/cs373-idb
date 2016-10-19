@@ -11,6 +11,8 @@
 
 # Introduction
 
+
+
 # Design
 
 ## Selecting our subjects
@@ -48,10 +50,69 @@ Year's Characteristics:
  - Top Journal > Connects to other pillar
  - Papers > Connects to Papers? ##################-- HELP AGAIN PLEASE --##################
 
+## Web Design
 
+Lior, describe the frontend design of the website (how we used the Yeti theme, building the tables header, tables, home/about pages, etc)
+
+## Models
+
+Eric/Addison, provide an introduction and describe UML/Apiary/other modeling tools
+
+### UML
+
+Eric/Addison
+
+### Apiary
+
+Eric/Addison
+
+## Unit tests
+
+Eric/Addison, describe unit tests
 
 # Tools
 
+We used the following tools to help us throughout our development process throughout the project:
+ - Slack: for messaging and communication
+ - NameCheap: getting a free domain name
+ - DigitalOcean - hosting the server using a Droplet
+ - Flask: a python framework for deploying our web server
+ - Apiary - documenting the API that we will be implementing to fetch data from the database
+ - Bootstrap - CSS/JavaScript library to beautify and standardize the look of our website
+ - Bootstrap [Yeti Theme](https://bootswatch.com/yeti/) - a specific Bootstrap theme that we used
+
 # Hosting
+
+To set up hosting, we used tools that were recommended in the project description, namely DigitalOcean, Flask, and NameCheap. Additionally, the guide provided by brpowell on Github was also very useful as a guide. The following is an outline of the all of the major tools that we used, and our process in how we used those tools.
+
+## DigitalOcean
+
+We started by setting up a Droplet using DigitalOcean. The process of creating the Droplet was relatively straightforward, although it took over an hour just for DigitalOcean to give us access to our account. The [tutorial](https://github.com/brpowell/flask-example/wiki/Hosting-on-Digital-Ocean) and [sample code](https://github.com/brpowell/flask-example/) provided by [brpowell](https://github.com/brpowell/) on Github proved to be very helpful, and we were able to follow the instructions almost step-by-step.
+
+Because the majority of the steps that we followed for setting up DigitalOcean was described in the aforementioned tutorial, we do not feel the need to re-iterate these instructions step by step. However, there were a couple of issues that we ran into that were not covered by the tutorial. These are outlined below:
+
+### Installing psycopg2
+
+First of all, when trying to install `psycopg2`, which was specified in the `requirements.txt` file provided in brpowell's sample project, we got the following error:
+~~~
+Error: pg_config executable not found.
+~~~
+
+After a Google search on the aforementioned issue, we found a [StackOverflow post](http://stackoverflow.com/questions/11618898/pg-config-executable-not-found) to troubleshoot the problem. It turned out that we had to install a package on our Ubuntu droplet called `libpq-dev`. Thus, we were able to solve the issue by executing
+~~~
+sudo apt-get install libpq-dev
+~~~
+before installing the required pip packages using
+~~~
+pip install -r requirements.txt
+~~~
+
+### Using virtualvenv
+
+The tutorial also suggested that we install a package called `virtualvenv` and create a virtual environment from which to deploy our web application. However, there was no mention of this being a requirement in the project decription, and we were unable to figure out how to get the app running with the virtualhost from the virtual environment (we kept getting errors saying that the `pip` packages were not found, as they were only installed in the virtual environment and not on the actual server), so in the end we just ended up installing everything directly on the droplet and ignoring the `virutalvenv` part of the tutorial. From there, we were finally able to successfully connect our Flask application to the website domain name, initially using the sample code that was provided by brpowell. 
+
+Note that this is simply an explanation of how we were able to use DigitalOcean to set up the hosting server, with some sample content. The actual front-end web development is described in the Web Design section.
+
+## NameCheap and domain integration
 
 
