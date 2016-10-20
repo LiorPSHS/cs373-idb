@@ -109,7 +109,7 @@ Furthermore, we had to make some changes in DigitalOcean as well. After adding t
 
 ### Updating the VirtualHost
 
-The final step was to update the VirutalHost so that our Flask web application would display properly when accessed through our NameCheap domain name. Once again, brpowell's tutorial provided us with a base template for the virtual host file, as well as instructions on how to activate it and connect with Flask. The most important changes that we had to make were to set the `ServerName` field in the file to `researchpapers.me`, and creating/linking the approrpriate `.wsgi` file. These two steps allowed us to serve our Flask application through the domain name that we registered. 
+The final step was to update the VirtualHost so that our Flask web application would display properly when accessed through our NameCheap domain name. Once again, brpowell's tutorial provided us with a base template for the virtual host file, as well as instructions on how to activate it and connect with Flask. The most important changes that we had to make were to set the `ServerName` field in the file to `researchpapers.me`, and creating/linking the appropriate `.wsgi` file. These two steps allowed us to serve our Flask application through the domain name that we registered. 
 
 # Tools
 
