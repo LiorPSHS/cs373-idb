@@ -3,13 +3,21 @@ sudo: false
 language: python
 
 python:
-  - 3.5
+  - "3.5"
 
 before_install:
   - pip install --upgrade pip
 
 script:
   - make check
+
+install:
+    - pip install autopep8
+    - pip install coverage
+    - pip install pylint
+
+before_script:
+    - alias python3.5='python'
 
 branches:
   only:
