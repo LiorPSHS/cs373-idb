@@ -8,8 +8,9 @@
     <title>Research Paper Database</title>
 
     <!-- Bootstrap -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="bootstrap/css/yetibootstrap.min.css" rel="stylesheet">
+    <link href="http://104.131.163.33/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://104.131.163.33/bootstrap/css/yetibootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -19,40 +20,44 @@
     <![endif]-->
   </head>
   <body ng-app="">
-    <!-- <div ng-include="'header.html'"></div> -->
-    <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Research Papers</a>
+    <div ng-include="'header.html'"></div>
+    <div class="jumbotron">
+      <div class="container">
+        <h2>Research Paper Directory</h2>
+        <p>Welcome to the RPD, a tool designed to help you review research papers. You can organize the publications by the year they were published, the journal that printed it, or view a vast list of documents.</p>
+        <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p> -->
+      </div>
     </div>
 
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="/countries">Journals</a></li>
-        <li><a href="/years">Years</a></li>
-        <li><a href="/papers">Papers</a></li>
-      </ul>
-
-<!--       <ul class="nav navbar-nav navbar-right">
-       <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h3>Browse Research Papers</h3>
+          <p>See the list of research papers stored.</p>
+          <p><a class="btn btn-default" href="/papers" role="button">View more &raquo;</a></p>
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-      </ul> -->
+        <div class="col-md-4">
+          <h3>Browse Publishing Journals</h3>
+          <p>View the list of journals that publish papers</p>
+          <p><a class="btn btn-default" href="/journals" role="button">View details &raquo;</a></p>
+       </div>
+        <div class="col-md-4">
+          <h3>Browse Publishing Years</h3>
+          <p>Sort the papers by the year they were published</p>
+          <p><a class="btn btn-default" href="/years" role="button">View details &raquo;</a></p>
+        </div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p></p>
+      </footer>
     </div>
-  </div>
-</nav>
     <!-- div (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="http://104.131.163.33/bootstrap/js/bootstrap.min.js"></script>
   </body>
 </html>
