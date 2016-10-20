@@ -40,7 +40,6 @@ Journal's Characteristics:
  - Most Popular Subject > Relevant, gives an indication of what the Journal is all about
  - Most Popular Year > Connects to another pillar, changes w/ time. gives an indication of when a journal is/was active
  - Most Contributing Country > Relevant, can be retrieved from a sorted list in original database
- - Papers > Connects to Papers? #######################--NEED HELP WITH THIS ONE--########################
 
 Year's Characteristics:
  - Year(name) > Identifier.
@@ -48,7 +47,6 @@ Year's Characteristics:
  - Most Popular Subject > Shows trends over time.
  - Most Popular Keyword > Shows less distinct but more specific trends over time
  - Top Journal > Connects to other pillar
- - Papers > Connects to Papers? ##################-- HELP AGAIN PLEASE --##################
 
 ## Web Design
 For front end design, we first decided on the general theme of our website which we agreed that we wanted to keep simplistic and clean. Browsing through Bootstrap, we looked at a theme called Yeti which looked very aesthetically pleasing to the user. First we decided to make a header file which was separated from all other pages in order to minimize the number of changes that would be required. If a change is needed in the header, instead of changing all the other pages, we could only change the one file which would be placed into all the other files. We decided to have the standard header which contained a home page link in the far left and other options to take your to the pillar pages. The pillars are ordered from papers, journals, year which seems to be the most logical order that a site like this would use to browse these options from a broad range to a narrow range. The splash page was created using the jumbotron aspect from yeti theme of bootstrap, attempting to summarize the purpose of the site in minimum amount of words. It offers the goal of the site and the different tools that the papers can be sorted in; by paper, journal published, or year published. Giving the user an overview of the site as well as how each pillar is organized.
@@ -114,7 +112,7 @@ Furthermore, we had to make some changes in DigitalOcean as well. After adding t
 
 ### Updating the VirtualHost
 
-The final step was to update the VirutalHost so that our Flask web application would display properly when accessed through our NameCheap domain name. Once again, brpowell's tutorial provided us with a base template for the virtual host file, as well as instructions on how to activate it and connect with Flask. The most important changes that we had to make were to set the `ServerName` field in the file to `researchpapers.me`, and creating/linking the approrpriate `.wsgi` file. These two steps allowed us to serve our Flask application through the domain name that we registered. 
+The final step was to update the VirtualHost so that our Flask web application would display properly when accessed through our NameCheap domain name. Once again, brpowell's tutorial provided us with a base template for the virtual host file, as well as instructions on how to activate it and connect with Flask. The most important changes that we had to make were to set the `ServerName` field in the file to `researchpapers.me`, and creating/linking the appropriate `.wsgi` file. These two steps allowed us to serve our Flask application through the domain name that we registered. 
 
 # Tools
 
