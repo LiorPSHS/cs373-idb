@@ -40,7 +40,6 @@ Journal's Characteristics:
  - Most Popular Subject > Relevant, gives an indication of what the Journal is all about
  - Most Popular Year > Connects to another pillar, changes w/ time. gives an indication of when a journal is/was active
  - Most Contributing Country > Relevant, can be retrieved from a sorted list in original database
- - Papers > Connects to Papers? #######################--NEED HELP WITH THIS ONE--########################
 
 Year's Characteristics:
  - Year(name) > Identifier.
@@ -48,13 +47,9 @@ Year's Characteristics:
  - Most Popular Subject > Shows trends over time.
  - Most Popular Keyword > Shows less distinct but more specific trends over time
  - Top Journal > Connects to other pillar
- - Papers > Connects to Papers? ##################-- HELP AGAIN PLEASE --##################
 
 ## Web Design
 For front end design, we first decided on the general theme of our website which we agreed that we wanted to keep simplistic and clean. Browsing through Bootstrap, we looked at a theme called Yeti which looked very aesthetically pleasing to the user. First we decided to make a header file which was separated from all other pages in order to minimize the number of changes that would be required. If a change is needed in the header, instead of changing all the other pages, we could only change the one file which would be placed into all the other files. We decided to have the standard header which contained a home page link in the far left and other options to take your to the pillar pages. The pillars are ordered from papers, journals, year which seems to be the most logical order that a site like this would use to browse these options from a broad range to a narrow range. The splash page was created using the jumbotron aspect from yeti theme of bootstrap, attempting to summarize the purpose of the site in minimum amount of words. It offers the goal of the site and the different tools that the papers can be sorted in; by paper, journal published, or year published. Giving the user an overview of the site as well as how each pillar is organized.
-
-
-Lior, describe the frontend design of the website (how we used the Yeti theme, building the tables header, tables, home/about pages, etc)
 
 ## Models
 
@@ -62,7 +57,7 @@ Eric/Addison, provide an introduction and describe UML/Apiary/other modeling too
 
 ### UML
 
-Eric/Addison
+Our data model's UML depiction was very simple to create using YUML website. Once we figured out the correct multiplicity between the 3 pillars, we were able to create the diagram below. The diagram shows that between journals and papers there is a one to many relationship which makes sense because a journal can have as many papers in it as it wants to publish but a paper can only be published within a year. This relationship is basically the same as the one between years and papers because a paper can only be published within one year but as many papers as people are publishing can be published within a year. There is a one to one relationship both ways between years and journals as each of them has a top of the other.
 
 ### Apiary
 
