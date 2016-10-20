@@ -53,19 +53,19 @@ For front end design, we first decided on the general theme of our website which
 
 ## Models
 
-Eric/Addison, provide an introduction and describe UML/Apiary/other modeling tools
+Our models were created using flask's version of sqlalchemy, with the diagram showing their multiplicity being created from the YUML website. These models would allow developer's to get trends over the years of different journals and see data about specific papers with their data on them.
 
 ### UML
 
-Our data model's UML depiction was very simple to create using YUML website. Once we figured out the correct multiplicity between the 3 pillars, we were able to create the diagram below. The diagram shows that between journals and papers there is a one to many relationship which makes sense because a journal can have as many papers in it as it wants to publish but a paper can only be published within a year. This relationship is basically the same as the one between years and papers because a paper can only be published within one year but as many papers as people are publishing can be published within a year. There is a one to one relationship both ways between years and journals as each of them has a top of the other.
+Our data model's UML depiction was very simple to create using the YUML website. Once we figured out the correct multiplicity between the 3 pillars, we were able to create the diagram below. The diagram shows that between journals and papers there is a one to many relationship which makes sense because a journal can have as many papers in it as it wants to publish but a paper can only be published within a year. This relationship is basically the same as the one between years and papers because a paper can only be published within one year but as many papers as people are publishing can be published within a year. There is a one to one relationship both ways between years and journals as each of them has a top of the other.
 
 ### Apiary
 
-Eric/Addison
+The Apiary for our future restful API mode is currently a very basic example of what we want to implement in the future phases of the project. Our restful API design currently is based on previous years on what they implemented but adapted to our pillars. We at first had problems creating it because we were trying to do it on people's account who were not the administrator of the repo and for apiary to be able to integrate into the Github. So far all we have is simple GET requests to be able to get individual pillars by their unique identifiers. This will just return simple jsons which are a list of all the attributes for that specific pillar that you requested. Once our site is implemented more we may create other requests that people can make which will return other data or make it so you can search within the data on our website through the restful API. The restful API should eventually make it easy for developers to come in and pull the data they want or need so that they are able to make their own projects using the data pulled from our website.
 
 ## Unit tests
 
-Eric/Addison, describe unit tests
+Our unit tests were created to test against a future database which we have not implemented yet. So it was difficult to come up with worthwile unit tests at first because we weren't sure about how exactly the database would be implemented within future phases of the the project. This led to very basic tests against the models which would be able to be run once we got the database running in future projects. The tests currently just make sure that each model can be created properly, we can pull out attributes, their representations are printing properly, and that they keep their attributes when pulled from the database. These tests are designed so that they will be able to check that our database won't mess up any of our models while storing and querying data.
 
 # Hosting
 
