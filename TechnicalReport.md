@@ -40,7 +40,6 @@ Journal's Characteristics:
  - Most Popular Subject > Relevant, gives an indication of what the Journal is all about
  - Most Popular Year > Connects to another pillar, changes w/ time. gives an indication of when a journal is/was active
  - Most Contributing Country > Relevant, can be retrieved from a sorted list in original database
- - Papers > Connects to Papers? #######################--NEED HELP WITH THIS ONE--########################
 
 Year's Characteristics:
  - Year(name) > Identifier.
@@ -48,29 +47,25 @@ Year's Characteristics:
  - Most Popular Subject > Shows trends over time.
  - Most Popular Keyword > Shows less distinct but more specific trends over time
  - Top Journal > Connects to other pillar
- - Papers > Connects to Papers? ##################-- HELP AGAIN PLEASE --##################
 
 ## Web Design
 For front end design, we first decided on the general theme of our website which we agreed that we wanted to keep simplistic and clean. Browsing through Bootstrap, we looked at a theme called Yeti which looked very aesthetically pleasing to the user. First we decided to make a header file which was separated from all other pages in order to minimize the number of changes that would be required. If a change is needed in the header, instead of changing all the other pages, we could only change the one file which would be placed into all the other files. We decided to have the standard header which contained a home page link in the far left and other options to take your to the pillar pages. The pillars are ordered from papers, journals, year which seems to be the most logical order that a site like this would use to browse these options from a broad range to a narrow range. The splash page was created using the jumbotron aspect from yeti theme of bootstrap, attempting to summarize the purpose of the site in minimum amount of words. It offers the goal of the site and the different tools that the papers can be sorted in; by paper, journal published, or year published. Giving the user an overview of the site as well as how each pillar is organized.
 
-
-Lior, describe the frontend design of the website (how we used the Yeti theme, building the tables header, tables, home/about pages, etc)
-
 ## Models
 
-Eric/Addison, provide an introduction and describe UML/Apiary/other modeling tools
+Our models were created using flask's version of sqlalchemy, with the diagram showing their multiplicity being created from the YUML website. These models would allow developer's to get trends over the years of different journals and see data about specific papers with their data on them.
 
 ### UML
 
-Eric/Addison
+Our data model's UML depiction was very simple to create using the YUML website. Once we figured out the correct multiplicity between the 3 pillars, we were able to create the diagram below. The diagram shows that between journals and papers there is a one to many relationship which makes sense because a journal can have as many papers in it as it wants to publish but a paper can only be published within a year. This relationship is basically the same as the one between years and papers because a paper can only be published within one year but as many papers as people are publishing can be published within a year. There is a one to one relationship both ways between years and journals as each of them has a top of the other.
 
 ### Apiary
 
-Eric/Addison
+The Apiary for our future restful API mode is currently a very basic example of what we want to implement in the future phases of the project. Our restful API design currently is based on previous years on what they implemented but adapted to our pillars. We at first had problems creating it because we were trying to do it on people's account who were not the administrator of the repo and for apiary to be able to integrate into the Github. So far all we have is simple GET requests to be able to get individual pillars by their unique identifiers. This will just return simple jsons which are a list of all the attributes for that specific pillar that you requested. Once our site is implemented more we may create other requests that people can make which will return other data or make it so you can search within the data on our website through the restful API. The restful API should eventually make it easy for developers to come in and pull the data they want or need so that they are able to make their own projects using the data pulled from our website.
 
 ## Unit tests
 
-Eric/Addison, describe unit tests
+Our unit tests were created to test against a future database which we have not implemented yet. So it was difficult to come up with worthwile unit tests at first because we weren't sure about how exactly the database would be implemented within future phases of the the project. This led to very basic tests against the models which would be able to be run once we got the database running in future projects. The tests currently just make sure that each model can be created properly, we can pull out attributes, their representations are printing properly, and that they keep their attributes when pulled from the database. These tests are designed so that they will be able to check that our database won't mess up any of our models while storing and querying data.
 
 # Hosting
 
@@ -114,7 +109,7 @@ Furthermore, we had to make some changes in DigitalOcean as well. After adding t
 
 ### Updating the VirtualHost
 
-The final step was to update the VirutalHost so that our Flask web application would display properly when accessed through our NameCheap domain name. Once again, brpowell's tutorial provided us with a base template for the virtual host file, as well as instructions on how to activate it and connect with Flask. The most important changes that we had to make were to set the `ServerName` field in the file to `researchpapers.me`, and creating/linking the approrpriate `.wsgi` file. These two steps allowed us to serve our Flask application through the domain name that we registered. 
+The final step was to update the VirtualHost so that our Flask web application would display properly when accessed through our NameCheap domain name. Once again, brpowell's tutorial provided us with a base template for the virtual host file, as well as instructions on how to activate it and connect with Flask. The most important changes that we had to make were to set the `ServerName` field in the file to `researchpapers.me`, and creating/linking the appropriate `.wsgi` file. These two steps allowed us to serve our Flask application through the domain name that we registered. 
 
 # Tools
 

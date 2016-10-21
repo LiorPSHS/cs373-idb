@@ -35,6 +35,37 @@ def papers():
 def header():
 	return render_template('header.html')
 
+# Static pages, get rid of these later
+@app.route('/papers1')
+def papers1():
+	return render_template('papers1.html')
+@app.route('/papers2')
+def papers2():
+	return render_template('papers2.html')
+@app.route('/papers3')
+def papers3():
+	return render_template('papers3.html')
+
+@app.route('/journal1')
+def journal1():
+	return render_template('journals1.html')
+@app.route('/journal2')
+def journal2():
+	return render_template('journals2.html')
+@app.route('/journal3')
+def journal3():
+	return render_template('journals3.html')
+
+@app.route('/years1')
+def years1():
+	return render_template('years1.html')
+@app.route('/years2')
+def years2():
+	return render_template('years2.html')
+@app.route('/years3')
+def years3():
+	return render_template('years3.html')
+
 def shell_context():
 	context = {
 		'app': app,
