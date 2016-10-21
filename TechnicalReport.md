@@ -11,7 +11,7 @@
 
 # Introduction
 
-
+We are creating a website which will have a Restful API to be able to check on research papers and specific data about them. You can either look at individual papers, individual scientific journals that publish papers, or by looking at the stats for specific years. This will help people looking for the type of data we provide to be able to complete their own projects from looking at our site. Our site will eventualy be able to be searched to make it easier to find specific papers, journals or years that people are looking for. The pillars are all interconnected so that you will be able to move between each section by looking at the different connections between pillars as you go through the site. This will allow you to find data you didn't even know you were looking for while browsing the site.
 
 # Design
 

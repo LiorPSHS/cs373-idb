@@ -35,6 +35,10 @@ def papers():
 def header():
 	return render_template('header.html')
 
+@app.route('/about')
+def about():
+	return render_template('about.html')
+
 # Static pages, get rid of these later
 @app.route('/papers1')
 def papers1():
