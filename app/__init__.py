@@ -31,6 +31,17 @@ def about():
 
 # API
 
+@app_instance.route('/')
+def run_tests():
+    from subprocess import getoutput
+    from os import path
+    p = path.join(path.dirname(path.realpath(__file__)), 'tests.py')
+    output = getoutput('python '+p)
+    print(output)
+    return jsonify({'output': str(output)})
+
+
+
 @app.route('/api/papers/<int:page_number>', methods=['GET'])
 def api_papers(page_number):
 	papers = get_papers(page_number)
