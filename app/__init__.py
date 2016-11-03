@@ -39,47 +39,47 @@ def header():
 def about():
 	return render_template('about.html')
 
-@app_instance.route('/api/papers/<int:page>', methods=['GET'])
-@app_instance.route('/api/papers', methods=['GET'])
-def get_games(page=1):
-    request = Paper.query.paginate(page=page, per_page=25)
-    papers = request.items
-    return jsonify({'papers': [paper.to_json() for paper in papers] })
+# @app_instance.route('/api/papers/<int:page>', methods=['GET'])
+# @app_instance.route('/api/papers', methods=['GET'])
+# def get_games(page=1):
+#     request = Paper.query.paginate(page=page, per_page=25)
+#     papers = request.items
+#     return jsonify({'papers': [paper.to_json() for paper in papers] })
 
-@app_instance.route('/api/journals/<int:page>', methods=['GET'])
-@app_instance.route('/api/journals', methods=['GET'])
-def get_games(page=1):
-    request = Game.query.paginate(page=page, per_page=25)
-    journals = request.items
-    return jsonify({'journals': [journal.to_json() for journal in journals] })
+# @app_instance.route('/api/journals/<int:page>', methods=['GET'])
+# @app_instance.route('/api/journals', methods=['GET'])
+# def get_games(page=1):
+#     request = Game.query.paginate(page=page, per_page=25)
+#     journals = request.items
+#     return jsonify({'journals': [journal.to_json() for journal in journals] })
 
-@app_instance.route('/api/year/<int:page>', methods=['GET'])
-@app_instance.route('/api/year', methods=['GET'])
-def get_games(page=1):
-    request = Game.query.paginate(page=page, per_page=25)
-    year = request.items
-    return jsonify({'year': [year.to_json() for year in year] })    
+# @app_instance.route('/api/year/<int:page>', methods=['GET'])
+# @app_instance.route('/api/year', methods=['GET'])
+# def get_games(page=1):
+#     request = Game.query.paginate(page=page, per_page=25)
+#     year = request.items
+#     return jsonify({'year': [year.to_json() for year in year] })    
 
-@app_instance.route('/api/paper/<int:id>', methods=['GET'])
-def get_paper(id):
-	request = Paper.query.filter_by(id=id).first()
-    if request is None:
-        abort(404)
-    return jsonify(request.to_json(list_view=True))
+# @app_instance.route('/api/paper/<int:id>', methods=['GET'])
+# def get_paper(id):
+# 	request = Paper.query.filter_by(id=id).first()
+#     if request is None:
+#         abort(404)
+#     return jsonify(request.to_json(list_view=True))
 
-@app_instance.route('/api/journal/<int:id>', methods=['GET'])
-def get_journal(id):
-	request = Journal.query.filter_by(id=id).first()
-    if request is None:
-        abort(404)
-    return jsonify(request.to_json(list_view=True))
+# @app_instance.route('/api/journal/<int:id>', methods=['GET'])
+# def get_journal(id):
+# 	request = Journal.query.filter_by(id=id).first()
+#     if request is None:
+#         abort(404)
+#     return jsonify(request.to_json(list_view=True))
 
-@app_instance.route('/api/year/<int:id>', methods=['GET'])
-def get_year(id):
-	request = Year.query.filter_by(id=id).first()
-    if request is None:
-        abort(404)
-    return jsonify(request.to_json(list_view=True))
+# @app_instance.route('/api/year/<int:id>', methods=['GET'])
+# def get_year(id):
+# 	request = Year.query.filter_by(id=id).first()
+#     if request is None:
+#         abort(404)
+#     return jsonify(request.to_json(list_view=True))
 
 # Static pages, get rid of these later
 @app.route('/papers1')
