@@ -1,28 +1,24 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from flask_script import Manager, Shell
-#from models import Paper,Journal,Year
+from models import get_papers, get_paper, get_journals, get_journal, get_years, get_year
+
 app = Flask(__name__)
 
+# Main pages
 @app.route('/')
 def index():
         return render_template('index.html')
 
 @app.route('/years')
 def years():
-	#b = Year.query.all()
-	#return render_template('years.html', years=b)
 	return render_template('years.html')
 
 @app.route('/journals')
 def countries():
-	#a = Journal.query.all()
-	#return render_template('journals.html', journals=a)
 	return render_template('journals.html')
 
 @app.route('/papers')
 def papers():
-	#c = Paper.query.all()
-	#return render_template('papers.html', papers=c)
 	return render_template('papers.html')
 
 @app.route('/header.html')
@@ -33,18 +29,37 @@ def header():
 def about():
 	return render_template('about.html')
 
-# Single pages
-@app.route('/paper<int:paper_id>', methods=['GET'])
-def paper(paper_id):
-	return render_template('papers1.html', pid=paper_id)
+# API
 
-@app.route('/journal<int:journal_id>', methods=['GET'])
-def journal(journal_id):
-	return render_template('journals1.html')
+@app.route('/api/papers/<int:page_number>', methods=['GET'])
+def api_papers(page_number):
+	papers = get_papers(page_number)
+	return jsonify(papers)
 
-@app.route('/year<int:year_id>', methods=['GET'])
-def year(year_id):
-	return render_template('years1.html')
+@app.route('/api/paper/<int:paper_id>', methods=['GET'])
+def api_paper(paper_id):
+	paper = get_paper(paper_id)
+	return jsonify(paper)
+
+@app.route('/api/journals/<int:page_number>', methods=['GET'])
+def api_journals(page_number):
+	journals = get_journals(page_number)
+	return jsonify(journals)
+
+@app.route('/api/journal/<int:journal_id>', methods=['GET'])
+def api_journal(journal_id):
+	journal = get_journal(journal_id)
+	return jsonify(journal)
+
+@app.route('/api/years/<int:page_number>', methods=['GET'])
+def api_years(page_number):
+	years = get_years(page_number)
+	return jsonify(years)
+
+@app.route('/api/year/<int:year_id>', methods=['GET'])
+def api_year(year_id):
+	year = get_year(year_id)
+	return jsonify(year)
 
 if __name__ == "__main__":
-        app.run()
+        app.run(debug=True)
