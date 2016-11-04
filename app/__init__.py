@@ -20,8 +20,8 @@ def about():
 	return render_template('about.html')
 
 # Unit tests
-"""
-@app_instance.route('/')
+
+@app_instance.route('/run_tests')
 def run_tests():
     from subprocess import getoutput
     from os import path
@@ -29,7 +29,7 @@ def run_tests():
     output = getoutput('python '+p)
     print(output)
     return jsonify({'output': str(output)})
-"""
+
 
 # Table pages
 @app.route('/papers<int:page_number>', methods=['GET'])
