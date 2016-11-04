@@ -67,6 +67,23 @@ def journal(journal_id):
 	d = requests.get(api_url)
 	json_dict = json.loads(d.text)
 
+	paper_api_url = "http://researchpapers.me/api/papers/journal/" + str(journal_id)
+	p = requests.get(paper_api_url)
+	paper_dict = json.loads(p.text)
+	return render_template('journal.html', data=json_dict, paper_data=paper_dict)
+
+@app.route('/year<int:year_id>', methods=['GET'])
+def year(year_id):
+	api_url = "http://researchpapers.me/api/year/" + str(year_id)
+	d = requests.get(api_url)
+	json_dict = json.loads(d.text)
+
+	paper_api_url = "http://researchpapers.me/api/papers/year/" + str(year_id)
+	p = requests.get(paper_api_url)
+	paper_dict = json.loads(p.text)
+	return render_template('year.html', data=json_dict, paper_data=paper_dict)
+
+# API
 @app.route('/api/papers/<int:page_number>', methods=['GET'])
 def api_papers(page_number):
 	papers = get_papers(page_number)
