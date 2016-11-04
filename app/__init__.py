@@ -19,6 +19,18 @@ def header():
 def about():
 	return render_template('about.html')
 
+# Unit tests
+"""
+@app_instance.route('/')
+def run_tests():
+    from subprocess import getoutput
+    from os import path
+    p = path.join(path.dirname(path.realpath(__file__)), 'tests.py')
+    output = getoutput('python '+p)
+    print(output)
+    return jsonify({'output': str(output)})
+"""
+
 # Table pages
 @app.route('/papers<int:page_number>', methods=['GET'])
 def papers(page_number):
@@ -55,23 +67,6 @@ def journal(journal_id):
 	d = requests.get(api_url)
 	json_dict = json.loads(d.text)
 
-	paper_api_url = "http://researchpapers.me/api/papers/journal/" + str(journal_id)
-	p = requests.get(paper_api_url)
-	paper_dict = json.loads(p.text)
-	return render_template('journal.html', data=json_dict, paper_data=paper_dict)
-
-@app.route('/year<int:year_id>', methods=['GET'])
-def year(year_id):
-	api_url = "http://researchpapers.me/api/year/" + str(year_id)
-	d = requests.get(api_url)
-	json_dict = json.loads(d.text)
-
-	paper_api_url = "http://researchpapers.me/api/papers/year/" + str(year_id)
-	p = requests.get(paper_api_url)
-	paper_dict = json.loads(p.text)
-	return render_template('year.html', data=json_dict, paper_data=paper_dict)
-
-# API
 @app.route('/api/papers/<int:page_number>', methods=['GET'])
 def api_papers(page_number):
 	papers = get_papers(page_number)
