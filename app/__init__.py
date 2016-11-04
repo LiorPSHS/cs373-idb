@@ -1,3 +1,6 @@
+import subprocess
+import shlex
+from os import path
 from flask import Flask, render_template, request, jsonify
 from flask_script import Manager, Shell
 from models import get_papers, get_paper, get_journals, get_journal, get_years, get_year, get_papers_by_year, get_papers_by_journal
@@ -6,10 +9,21 @@ import json
 
 app = Flask(__name__)
 
+def run_command(command):
+	process = subprocess.Popen(shlex.split(command), stdout=subprocess.PIPE)
+	while True:
+		output = process.stdout.readline()
+		if output == '' and process.poll() is not None:
+			break
+		if output:
+			print output.strip()
+	rc = process.poll()
+	return rc
+
 # Main pages
 @app.route('/')
 def index():
-        return render_template('index.html')
+		return render_template('index.html')
 
 @app.route('/header.html')
 def header():
@@ -21,14 +35,11 @@ def about():
 
 # Unit tests
 
-@app_instance.route('/run_tests')
+@app.route('/run_tests')
 def run_tests():
-    from subprocess import getoutput
-    from os import path
-    p = path.join(path.dirname(path.realpath(__file__)), 'tests.py')
-    output = getoutput('python '+p)
-    print(output)
-    return jsonify({'output': str(output)})
+	p = path.join(path.dirname(path.realpath(__file__)), 'tests.py')
+	output = run_command('python ' + p)
+	return jsonify({'output': str(output)})
 
 
 # Table pages
@@ -125,4 +136,4 @@ def api_year(year_id):
 	return jsonify(year)
 
 if __name__ == "__main__":
-        app.run(debug=True)
+	app.run(debug=True)
