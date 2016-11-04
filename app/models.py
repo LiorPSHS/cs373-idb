@@ -58,6 +58,9 @@ class Years(object):
 
 # Paper API
 
+"""
+convert Papers object to json
+"""
 def paper_json(paper):
 	year = session.query(Years).get(paper.year)
 	if year is None:
@@ -76,24 +79,39 @@ def paper_json(paper):
 		'abstract': paper.abstract
 	}
 
+"""
+get all papers using given page number
+"""
 def get_papers(page_number=1):
 	papers = session.query(Papers).offset(page_size * (page_number - 1)).limit(page_size).all()
 	return { 'papers': [paper_json(paper) for paper in papers] }
 
+"""
+get all json for a specific paper"
+"""
 def get_paper(paper_id=1):
 	paper = session.query(Papers).get(paper_id)
 	return { 'papers': paper_json(paper) }
 
+"""
+get all json for papers belonging to the journal id
+"""
 def get_papers_by_journal(journal_id):
 	papers = session.query(Papers).filter(Papers.journal == journal_id)
 	return { 'papers': [paper_json(paper) for paper in papers] }
 
+"""
+get all json for papers belonging to the year id
+"""
 def get_papers_by_year(year_id):
 	papers = session.query(Papers).filter(Papers.year == year_id)
 	return { 'papers': [paper_json(paper) for paper in papers] }
 
 # Journal API
 
+"""
+convert Journals object to json
+"""
 def journal_json(journal):
 	latest_year = session.query(Years).get(journal.latest_year)
 	if latest_year is None:
@@ -118,16 +136,25 @@ def journal_json(journal):
 		'top_year_count': journal.top_year_count
 	}
 
+"""
+get all journals using given page number
+"""
 def get_journals(page_number=1):
 	journals = session.query(Journals).offset(page_size * (page_number - 1)).limit(page_size).all()
 	return { 'journals': [journal_json(journal) for journal in journals] }
 
+"""
+get json for a specific journal
+"""
 def get_journal(journal_id=1):
 	journal = session.query(Journals).get(journal_id)
 	return { 'journals': journal_json(journal) }
 
 # Year API
 
+"""
+convert Years object to json
+"""
 def year_json(year):
 	top_journal = session.query(Journals).get(year.top_journal)
 	return {
@@ -141,10 +168,16 @@ def year_json(year):
 		'top_journal_count': year.top_journal_count
 	}
 
+"""
+get all years using the given page number
+"""
 def get_years(page_number=1):
 	years = session.query(Years).order_by(Years.year.desc()).offset(page_size * (page_number - 1)).limit(page_size).all()
 	return { 'years': [year_json(year) for year in years] }
 
+"""
+get json for a specific year
+"""
 def get_year(year_id=1):
 	year = session.query(Years).get(year_id)
 	return { 'years': year_json(year) }

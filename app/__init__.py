@@ -9,6 +9,9 @@ import json
 
 app = Flask(__name__)
 
+"""
+execute a command as a background process
+"""
 def run_command(command):
 	process = subprocess.Popen(shlex.split(command), stdout=subprocess.PIPE)
 	while True:
