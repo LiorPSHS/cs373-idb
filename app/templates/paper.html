@@ -5,7 +5,7 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-      <title>Research Papers</title>
+      <title>Paper Details</title>
       <!-- Bootstrap -->
       <link href="http://104.131.163.33/bootstrap/css/bootstrap.min.css" rel="stylesheet">
       <link href="http://104.131.163.33/bootstrap/css/yetibootstrap.min.css" rel="stylesheet">
@@ -18,6 +18,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
    </head>
+{% for paper in data %}
    <body ng-app="">
       <div ng-include="'header.html'"></div>
       <div class="row">
@@ -25,25 +26,22 @@
          <div class="col-md-8">
             <div class="panel panel-default">
                <div class="panel-body">
-                  <h2><b><i class="fa fa-pencil" aria-hidden="true"></i> Luminescence, Martian Sediments</b> </h2>
+                  <h2><b><i class="fa fa-pencil" aria-hidden="true"></i> {{ data[paper].name }}</b></h2>
                </div>
                <div class="panel-footer">
-                  <h3><b>Aurthors: </b>DeWitt, Regina </h3>
-                  <h3><b>Journal: </b>Encyclopedia of Scientific Dating Methods </h3>
-                  <h3> <b>Year Published: </b>2021 </h3>
-                  <h3>
-                  <b>Url: </b><a href="http://dx.doi.org/10.1007/978-94-007-6326-5_82-5">http://dx.doi.org/10.1007/978-94-007-6326-5_82-5</a> 
-                  <h3>
+                  <h3><b>Authors: </b>{{ data[paper].authors }}</h3>
+                  <h3><b>Journal: </b><a href="journal{{ data[paper].journal_id }}">{{ data[paper].journal }}</a></h3>
+                  <h3> <b>Year Published: </b><a href="year{{ data[paper].year_id }}">{{ data[paper].year }}</a></h3>
                </div>
             </div>
             <div class="row">
-               <div class="col-md-6">
+               <div class="col-md-12">
                   <div class="panel panel-default">
                      <div class="panel-body">
                         <h3><b> Abstract</h3>
                         </b>
                      </div>
-                     <div class="panel-footer">Martian regolith</div>
+                     <div class="panel-footer">{{ data[paper].abstract }}</div>
                   </div>
                </div>
                <div class="col-md-6"></div>
@@ -56,4 +54,5 @@
       <!-- Include all compiled plugins (below), or include individual files as needed -->
       <script src="http://104.131.163.33/bootstrap/js/bootstrap.min.js"></script>
    </body>
+{% endfor %}
 </html>

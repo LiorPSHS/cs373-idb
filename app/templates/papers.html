@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Research Papers</title>
+    <title>Papers (Page {{ pg }}) - Research Papers</title>
 
     <!-- Bootstrap -->
     <link href="http://104.131.163.33/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -24,6 +24,7 @@
     <div class="row">
        <div class="col-md-1"></div>
           <div class="col-md-10">
+<h2>Papers (Page {{ pg }})</h2>
     <table class="table table-striped table-hover ">
   <thead>
     <tr>
@@ -32,36 +33,24 @@
       <th>Authors</th>
       <th>Journal</th>
       <th>Year Published</th>
-      <th>Abstract</th>
     </tr>
   </thead>
   <tbody>
+{% for paper in data["papers"] %}
     <tr>
-      <td>1</td>
-      <td><a href="/papers1">Luminescence, Martian Sediments</a></td>
-      <td>DeWitt, Regina</td>
-      <td>Encyclopedia of Scientific Dating Methods</td>
-      <td>2021</td>
-      <th>Martian regolith</th>
+      <td>{{ paper.id }}</td>
+      <td><a href="/paper{{ paper.id }}">{{ paper.name }}</a></td>
+      <td>{{ paper.authors }}</td>
+      <td><a href="journal{{ paper.journal_id }}">{{ paper.journal }}</a></td>
+      <td><a href="year{{ paper.year_id }}">{{ paper.year }}</a></td>
     </tr>
-    <tr>
-      <td>2</td>
-      <td><a href="/papers2">Small-scale pattern of bryoflora in Mediterranean temporary ponds: hints for monitoring</a></td>
-      <td>Cogoni, Annalena | Filippino, Giorgia | Marignani, Michela</td>
-      <td>Hydrobiologia</td>
-      <td>2016</td>
-      <th>In the Mediterranean region temporary ponds are classified among the most biologically and biogeographically interesting ecosystems.</th>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td><a href="/papers3">	Electrophoretic detection of interspecific hybrids in Parnassius</a></td>
-      <td>Descimon, H. | Geiger, H.</td>
-      <td>Génétique, sélection, évolution</td>
-      <td>1988</td>
-      <th></th>
-    </tr>
+{% endfor %}
   </tbody>
 </table>
+<div>
+<a href="/papers{{ pg - 1 }}">Previous Page</a> | 
+<a href="/papers{{ pg + 1 }}">Next Page</a></div>
+<br/><br/>
 </div>
    <div class="col-md-1"></div>
  </div>

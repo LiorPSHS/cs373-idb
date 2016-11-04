@@ -5,7 +5,7 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-      <title>Research Papers</title>
+      <title>Year Details</title>
       <!-- Bootstrap -->
       <link href="http://104.131.163.33/bootstrap/css/bootstrap.min.css" rel="stylesheet">
       <link href="http://104.131.163.33/bootstrap/css/yetibootstrap.min.css" rel="stylesheet">
@@ -18,6 +18,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
    </head>
+{% for year in data %}
    <body ng-app="">
       <div ng-include="'header.html'"></div>
       <div class="row">
@@ -25,72 +26,29 @@
          <div class="col-md-8">
       <div class="panel panel-default">
          <div class="panel-body">
-            <h1><b> <i class="fa fa-calendar" aria-hidden="true"></i> 1988 </b> </h1>
+            <h1><b> <i class="fa fa-calendar" aria-hidden="true"></i> {{ data[year].year }}</b> </h1>
          </div>
          <div class="panel-footer">
-            <h3><b>Top Subject: </b> Medicine & public Health </h3>
-            <h3><b>Top Contributor:</b> United States (5679) </h3>
-            <h3><b>Top Keyword:</b> Rat </h3>
-            <h3> <b>Top Journal: </b>Reactions, <b>Papers: </b>456</h3>
-            <h3> <b>Total Papers: </b>126554 </h3>
+            <h3><b>Top Subject: </b>{{ data[year].top_subject }}</h3>
+            <h3><b>Top Country: </b>{{ data[year].top_country }}</h3>
+            <h3> <b>Top Journal: </b><a href="journal{{ data[year].top_journal_id }}">{{ data[year].top_journal }}</a>, <b>Papers: </b>{{ data[year].top_journal_count }}</h3>
+            <h3> <b>Total Papers: </b>{{ data[year].num_papers }}</h3>
          </div>
       </div>
       <div class="row">
-         <div class="col-md-6">
+         <div class="col-md-12">
             <div class="panel panel-default">
                <div class="panel-body">
-                  <h3> <b>Papers</b> </h3>
+                  <h3><b>Papers</b></h3>
                </div>
                <div class="panel-footer pre-scrollable">
                   <table class="table table-striped table-hover ">
-                     <thead>
-                        <tr>
-                           <th>#</th>
-                           <th>Title</th>
-                        </tr>
-                     </thead>
                      <tbody>
                         <tr>
-                           <td>1</td>
-                           <td>Search for age-dependent as compared to mutagen-induced mutations on the X-chromosome affecting viability in Drosophila melanogaster males</td>
+{% for paper in paper_data["papers"] %}
+                           <td><a href="paper{{ paper.id }}">{{ paper.name }}</a></td>
                         </tr>
-                        <tr>
-                           <td>2</td>
-                           <td>A test to detect association between autosomal and sex-linked loci in random mating populations: an example with Drosophila melanogaster</td>
-                        </tr>
-                        <tr class="info">
-                           <td>3</td>
-                           <td>Relationship between density- and frequency-dependent effects in two strains of Drosophila melanogaster</td>
-                        </tr>
-                        <tr class="success">
-                           <td>4</td>
-                           <td>Electrophoretic detection of interspecific hybrids in Parnassius (Lepidoptera Papilionidae)</td>
-                        </tr>
-                        <tr class="danger">
-                           <td>5</td>
-                           <td>La variation géographique du polymorphisme enzymatique dans les populations de Cepaea nemoralis des Pyrénées françaises</td>
-                        </tr>
-                        <tr class="warning">
-                           <td>6</td>
-                           <td>Comparaison des races bovines Charolaise, Limousine et Maine-Anjou en race pure et en intercroisement 3. Performances d\u0027abattage des taurillons purs et F1</td>
-                        </tr>
-                        <tr class="active">
-                           <td>7</td>
-                           <td>Environmental and genetic factors affecting udder characters and milk production in Chios sheep</td>
-                        </tr>
-                        <tr class="success">
-                           <td>8</td>
-                           <td>Genetic relationship between prepuberal plasma FSH levels and reproductive performance in Lacaune ewe lambs</td>
-                        </tr>
-                        <tr class="danger">
-                           <td>9</td>
-                           <td>Thyroid hormones and antibody response to sheep erythrocytes of dwarf and normal chickens selected for juvenile body weight</td>
-                        </tr>
-                        <tr>
-                           <td>10</td>
-                           <td>Threshold models with heterogeneous residual variance due to missing information</td>
-                        </tr>
-                     </tbody>
+{% endfor %}
                   </table>
                </div>
             </div>
@@ -101,4 +59,5 @@
     <div class="col-md-2"></div>
   </div>
    </body>
+{% endfor %}
 </html>

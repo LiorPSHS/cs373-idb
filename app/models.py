@@ -60,13 +60,19 @@ class Years(object):
 
 def paper_json(paper):
 	year = session.query(Years).get(paper.year)
+	if year is None:
+		year_string = "N/A"
+	else:
+		year_string = year.year
 	journal = session.query(Journals).get(paper.journal)
 	return {
 		'id': paper.id,
 		'name': paper.name,
 		'journal': journal.name,
+		'journal_id': paper.journal,
 		'authors': paper.authors,
-		'year': year.year,
+		'year': year_string,
+		'year_id': paper.year,
 		'abstract': paper.abstract
 	}
 
@@ -78,18 +84,37 @@ def get_paper(paper_id=1):
 	paper = session.query(Papers).get(paper_id)
 	return { 'papers': paper_json(paper) }
 
+def get_papers_by_journal(journal_id):
+	papers = session.query(Papers).filter(Papers.journal == journal_id)
+	return { 'papers': [paper_json(paper) for paper in papers] }
+
+def get_papers_by_year(year_id):
+	papers = session.query(Papers).filter(Papers.year == year_id)
+	return { 'papers': [paper_json(paper) for paper in papers] }
+
 # Journal API
 
 def journal_json(journal):
 	latest_year = session.query(Years).get(journal.latest_year)
+	if latest_year is None:
+		latest_year_string = "N/A"
+	else:
+		latest_year_string = latest_year.year
 	top_year = session.query(Years).get(journal.top_year)
+	if top_year is None:
+		top_year_string = "N/A"
+	else:
+		top_year_string = top_year.year
 	return {
 		'id': journal.id,
+		'name': journal.name,
 		'num_papers': journal.num_papers,
 		'top_subject': journal.top_subject,
-		'latest_year': latest_year.year,
+		'latest_year': latest_year_string,
+		'latest_year_id': journal.latest_year,
 		'latest_year_count': journal.latest_year_count,
-		'top_year': top_year.year,
+		'top_year': top_year_string,
+		'top_year_id': journal.top_year,
 		'top_year_count': journal.top_year_count
 	}
 
@@ -112,6 +137,7 @@ def year_json(year):
 		'top_subject': year.top_subject,
 		'top_country': year.top_country,
 		'top_journal': top_journal.name,
+		'top_journal_id': year.top_journal,
 		'top_journal_count': year.top_journal_count
 	}
 

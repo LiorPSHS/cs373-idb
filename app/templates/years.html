@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Research Papers</title>
+    <title>Years (Page {{ pg }}) - Research Papers</title>
 
     <!-- Bootstrap -->
     <link href="http://104.131.163.33/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -24,6 +24,7 @@
     <div class="row">
        <div class="col-md-1"></div>
           <div class="col-md-10">
+<h2>Years (Page {{ pg }})</h2>
     <table class="table table-striped table-hover ">
   <thead>
     <tr>
@@ -31,37 +32,28 @@
       <th>Year</th>
       <th># Published Papers</th>
       <th>Top Subject</th>
-      <th>Top Keyword</th>
+      <th>Top Country</th>
       <th>Top Journal</th>
     </tr>
   </thead>
   <tbody>
+{% for year in data["years"] %}
     <tr>
-      <td>1</td>
-      <td><a href="/years1">1998</a></td>
-      <td>126554</td>
-      <td>Medicine & Public Health</td>
-      <td>Rat</td>
-      <td>Reactions</td>
+      <td>{{ year.id }}</td>
+      <td><a href="/year{{ year.id }}">{{ year.year }}</a></td>
+      <td>{{ year.num_papers }}</td>
+      <td>{{ year.top_subject }}</td>
+      <td>{{ year.top_country }}</td>
+      <td><a href="journal{{ year.top_journal_id }}">{{ year.top_journal }}</a></td>
     </tr>
-    <tr>
-      <td>2</td>
-      <td><a href="/years1">1995</a></td>
-      <td>129605</td>
-      <td>Medicine & Public Health</td>
-      <td>Magnetic resonance imaging</td>
-      <td>Reactions Weekly</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td><a href="/years1">2011</a></td>
-      <td>400950</td>
-      <td>Medicine & Public Health</td>
-      <td>NMR</td>
-      <td>Encyclopedic Dictionary of Polymers</td>
-    </tr>
+{% endfor %}
   </tbody>
 </table>
+<div>
+<a href="/years{{ pg - 1 }}">Previous Page</a> | 
+<a href="/years{{ pg + 1 }}">Next Page</a></div>
+<br/><br/>
+</div>
 </div>
 <div class="col-md-1"></div>
 </div>
