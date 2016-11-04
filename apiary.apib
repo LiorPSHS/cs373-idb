@@ -1,82 +1,259 @@
 FORMAT: 1A
-HOST: https://app.apiary.io/utcs373f/
+HOST: https://researchpapers.me/api/
 
 # Research Papers
 
 Research Papers is a API to query the attributes of papers, the journals they were written in, and the details of specific years worth of papers.
-## Paper [/papers/{paper_id}]
+# Group Papers
+## Paper List [/papers/{page}]
++ Parameters
+    + page (number) - an optional page number the default is 1
+### Obtain a list of years [GET]
+
++ Response 200 (application/json)
+
+        {
+            "papers" : [
+                {
+                    "id" : 1,
+                    "name" : "Paper",
+                    "journal" : 1,
+                    "authors" : "Steve",
+                    "year" : "1995-12-2"
+                    "abstract" : "This is a paper"
+                },
+                {
+                    "id" : 2,
+                    "title" : "Flying",
+                    "journal" : 4,
+                    "authors" : "Davey Jones",
+                    "year" : "1995-12-2"
+                    "abstract" : "Yay! Flying."
+                },
+                {
+                    "id" : 3,
+                    "title" : "Fire",
+                    "journal" : 22,
+                    "authors" : "Steve",
+                    "year" : "1995-12-2"
+                    "abstract" : "Fire is hot"
+                }
+            ]
+        }
+## Paper [/paper/{paper_id}]
 + Parameters
     + paper_id (number) - ID of the paper in the form of an integer
 ### Obtain a Specific Paper [GET]
 
 + Response 200 (application/json)
 
-        [
-            {
+        {
                 "id" : 1,
-                "title" : "Paper",
-                "authors" : "Steve",
+                "name" : "Paper",
                 "journal" : 1,
-                "year" : 1995,
+                "authors" : "Steve",
+                "year" : "1995-12-2"
                 "abstract" : "This is a paper"
-            }
-        ]
+        }
+        
+# Group Journals
+## Journal List [/journals/{page}]
++ Parameters
+    + page (number) - an optional page number the default is 1
+    
+### Obtain a list of journals [GET]
 
-## Journal [/journals/{journal_id}]
++ Response 200 (application/json)
+
+        {
+            "journals" : [
+                {
+                    "id" : 1,
+                    "name" : "Frank's Journal",
+                    "num_papers" : 452,
+                    "top_subject" : "Physics",
+                    "top_year" : 195,
+                    "top_year_count": 150,
+                    "latest_year" : 4,
+                    "latest_year_count": 52,
+                    "papers" : [
+                        {
+                            "id" : 1,
+                            "name" : "Paper"
+                        },
+                        {
+                            "id" : 2,
+                            "name" : "Fying in the sky"
+                        }
+                    ]
+                },
+                {
+                    "id" : 2,
+                    "name" : "Dave's Journal",
+                    "num_papers" : 152,
+                    "top_subject" : "Chemistry",
+                    "top_year" : 95,
+                    "top_year_count": 15,
+                    "latest_year" : 42,
+                    "latest_year_count": 11,
+                    "papers" : [
+                        {
+                            "id" : 4,
+                            "name" : "Paper 214"
+                        },
+                        {
+                            "id" : 72,
+                            "name" : "Fying in the ground"
+                        }
+                    ]
+                },
+                {
+                    "id" : 4,
+                    "name" : "Mark's Journal",
+                    "num_papers" : 1252,
+                    "top_subject" : "Computer Science",
+                    "top_year" : 35,
+                    "top_year_count" : 502,
+                    "latest_year" : 142,
+                    "latest_year_count" : 123,
+                    "papers" : [
+                        {
+                            "id" : 42,
+                            "name" : "Paperman"
+                        },
+                        {
+                            "id" : 12,
+                            "name" : "Fying in the ocean"
+                        }
+                    ]
+                }
+            ]
+        }
+## Journal [/journal/{journal_id}]
 + Parameters
     + journal_id (number) - ID of the journal in the form of an integer
 ### Obtain a Specific Journal [GET]
 
 + Response 200 (application/json)
 
-        [
-            {
-                "id" : 1,
-                "name" : "Frank's Journal",
-                "num_papers" : 452,
-                "top_subject" : "Physics",
-                "top_year" : 1995,
-                "top_country" : "United States of America"
-                "papers" : [
-                    {
-                        "id" : 1,
-                        "name" : "Paper"
-                    }
+        {
+            "id" : 1,
+            "name" : "Frank's Journal",
+            "num_papers" : 452,
+            "top_subject" : "Physics",
+            "top_year" : 195,
+            "top_year_count": 150,
+            "latest_year" : 4,
+            "latest_year_count": 52,
+            "papers" : [
+                {
+                    "id" : 1,
+                    "name" : "Paper"
+                },
+                {
+                    "id" : 2,
+                    "name" : "Fying in the sky"
+                }
+            ]
+        }
+        
+# Group Years
+## Year List [/years/{page}]
++ Parameters
+    + page (number) - an optional page number the default is 1
+    
+### Obtain a list of years [GET]
+
++ Response 200 (application/json)
+
+        {
+            "years" : [
+                {
+                    "id" : 1,
+                    "year": 1995
+                    "num_papers" : 45,
+                    "top_subject" : "Physics",
+                    "top_country" : "China",
+                    "top_journal" : "Frank's Journal",
+                    "top_journal_count" : 532,
+                    "papers" : [
+                        {
+                            "id" : 1,
+                            "name" : "Paper"
+                        },
                     
-                    {
-                        "id" : 2,
-                        "name" : "Fying in the sky"
-                    }
+                        {
+                            "id" : 2,
+                            "name" : "Fying in the sky"
+                        }
                 
-                ]
-            }
-        ]
-## Year [/years/{year_id}]
+                    ]
+                },
+                {
+                    "id" : 2,
+                    "year": 1985
+                    "num_papers" : 35,
+                    "top_subject" : "Chemistry",
+                    "top_country" : "United States of America",
+                    "top_journal" : "Steve's Journal",
+                    "top_journal_count" : 5,
+                    "papers" : [
+                        {
+                            "id" : 1,
+                            "name" : "Paper 6"
+                        },
+                        {
+                            "id" : 2,
+                            "name" : "Fying in the ground"
+                        }
+                    ]
+                },
+                {
+                    "id" : 3,
+                    "year": 1895
+                    "num_papers" : 461,
+                    "top_subject" : "Computer Science",
+                    "top_country" : "Russia",
+                    "top_journal" : "Dave's Journal",
+                    "top_journal_count" : 51,
+                    "papers" : [
+                        {
+                            "id" : 1,
+                            "name" : "Paperman"
+                        }
+                    
+                        {
+                            "id" : 2,
+                            "name" : "Fying in space"
+                        }
+                
+                    ]
+                }
+            ]
+        }
+## Year [/year/{year_id}]
 + Parameters
     + year_id (number) - ID of the year in the form of an integer
 ### Obtain a Specific Year [GET]
 
 + Response 200 (application/json)
 
-        [
-            {
-                "id" : 1,
-                "year": 1995
-                "num_papers" : 45,
-                "top_subject" : "Physics",
-                "top_keyword" : "Gravity",
-                "top_journal" : "Frank's Journal"
-                "papers" : [
-                    {
-                        "id" : 1,
-                        "name" : "Paper"
-                    }
-                    
-                    {
-                        "id" : 2,
-                        "name" : "Fying in the sky"
-                    }
-                
-                ]
-            }
-        ]
+        {
+           "id" : 1,
+            "year": 1995
+            "num_papers" : 45,
+            "top_subject" : "Physics",
+            "top_country" : "China",
+            "top_journal" : "Frank's Journal",
+            "top_journal_count" : 532,
+            "papers" : [
+                {
+                    "id" : 1,
+                    "name" : "Paper"
+                },
+                {
+                    "id" : 2,
+                    "name" : "Fying in the sky"
+                }
+            ]
+        }
