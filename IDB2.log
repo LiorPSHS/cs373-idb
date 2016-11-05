@@ -1,0 +1,490 @@
+commit 31f567602b90c3e06de873dd3f52ad1a89e02459
+Author: addjuarez <addjuarez@yahoo.com>
+Date:   Fri Nov 4 19:10:45 2016 -0500
+
+    Delete test.txt
+
+commit 882ead47896d9ba5841eb2753668527499a0bdbe
+Author: addjuarez <addjuarez@yahoo.com>
+Date:   Fri Nov 4 19:07:23 2016 -0500
+
+    Create test.txt
+
+commit a0e4ae89a978f24ae70b6944ff21a219ffec33b1
+Merge: b07960a ed67045
+Author: Charles Tian <c.y.t@utexas.edu>
+Date:   Fri Nov 4 03:05:18 2016 +0000
+
+    Merge branch 'master' of https://github.com/chyt/cs373-idb
+
+commit b07960a65da38daf54fbdef18fa10bc28146b251
+Author: Charles Tian <c.y.t@utexas.edu>
+Date:   Fri Nov 4 02:56:06 2016 +0000
+
+    add documentation
+
+commit 3c633a4eeb78453fb0e6d67dfcedb7c1ef544133
+Merge: 6483de5 b7d34a1
+Author: Charles Tian <c.y.t@utexas.edu>
+Date:   Fri Nov 4 02:49:06 2016 +0000
+
+    Merge branch 'dev' of https://github.com/chyt/cs373-idb into dev
+
+commit 6483de5754ba3be9baacb139f66924aa670045d1
+Author: Charles Tian <c.y.t@utexas.edu>
+Date:   Fri Nov 4 02:48:55 2016 +0000
+
+    Integrated unit tests
+
+commit b7d34a1b8eec169d326f6567e6269850d29c4b46
+Author: addjuarez <addjuarez@yahoo.com>
+Date:   Thu Nov 3 21:27:56 2016 -0500
+
+    Update about.html
+
+commit d004c6635ef8b30c6fc8f124a0bad3f1a73ec046
+Author: addjuarez <addjuarez@yahoo.com>
+Date:   Thu Nov 3 21:04:22 2016 -0500
+
+    Fixed typo
+
+commit 0e6b251f78df6be74e8c34c41624361cffdafd2a
+Author: addjuarez <addjuarez@yahoo.com>
+Date:   Thu Nov 3 20:45:44 2016 -0500
+
+    Delete about.html
+
+commit 063bbba64e320f0037ed0fe89efc442db53d00d6
+Author: addjuarez <addjuarez@yahoo.com>
+Date:   Thu Nov 3 20:45:33 2016 -0500
+
+    Delete __init__.py
+
+commit 435d29eabb6bcc4ea84f4a7023de7daf74511185
+Author: addjuarez <addjuarez@yahoo.com>
+Date:   Thu Nov 3 20:45:18 2016 -0500
+
+    Update about.html
+
+commit 89ae41ac10d045b1ab3fb84d1e5ac340d3c06466
+Author: addjuarez <addjuarez@yahoo.com>
+Date:   Thu Nov 3 20:44:42 2016 -0500
+
+    Update __init__.py
+
+commit 840469141e7d6a0b2cb26171d829a0593a99e2d4
+Author: addjuarez <addjuarez@yahoo.com>
+Date:   Thu Nov 3 20:42:58 2016 -0500
+
+    first step to integrate unit tests
+
+commit 615a1c7bcfbdf069c81f8d85a37f7a3f615a9b27
+Author: Charles Tian <c.y.t@utexas.edu>
+Date:   Fri Nov 4 00:58:24 2016 +0000
+
+    Fix links
+
+commit 797ee247494724dbce79d9c2e6cd4dc29efd4a79
+Author: Charles Tian <c.y.t@utexas.edu>
+Date:   Fri Nov 4 00:57:24 2016 +0000
+
+    Fix bad merge
+
+commit ddfb70f1b3fa5aea699504b2c0e65661b9c252a6
+Merge: edc0484 5a2fe7c
+Author: Charles Tian <c.y.t@utexas.edu>
+Date:   Fri Nov 4 00:54:27 2016 +0000
+
+    Merge branch 'dev' of https://github.com/chyt/cs373-idb into dev
+
+commit edc0484a4ce8235f1f485e13760f2177b1c67f7a
+Author: Charles Tian <c.y.t@utexas.edu>
+Date:   Fri Nov 4 00:52:50 2016 +0000
+
+    Finished integrating API to frontend
+
+commit 5a2fe7cee11e936783cb41abb9757e8c2c4f9432
+Author: rdshea3 <ryan.shea@utexas.edu>
+Date:   Thu Nov 3 17:59:20 2016 -0500
+
+    added run_tests method. needs testing
+
+commit 048a4c12a106a731f022644b7cf8d82f902b3dfa
+Author: rdshea3 <ryan.shea@utexas.edu>
+Date:   Thu Nov 3 17:58:16 2016 -0500
+
+    Migrated new tests here
+
+commit 54190ec7f61a1ea5647045afb47bfe07a1f2b745
+Author: rdshea3 <ryan.shea@utexas.edu>
+Date:   Thu Nov 3 17:53:37 2016 -0500
+
+    added more code around, needs attention
+    
+    need to:
+      check main at bottom, make sure os is getting correct environment, all those variables are set up correctly
+      integrate actually running these things
+
+commit 5c2aa06ac3cc321225bb739fd0f2bc9e2b7b49c0
+Author: rdshea3 <ryan.shea@utexas.edu>
+Date:   Thu Nov 3 17:48:28 2016 -0500
+
+    needs wrapping in unit test structure. needs to be run
+
+commit 51efe73b94b5b88e1b5d63942bbfbe3695095c85
+Author: Charles Tian <c.y.t@utexas.edu>
+Date:   Thu Nov 3 22:44:09 2016 +0000
+
+    Finished API
+
+commit b62456eb3dbb46f756b2da2cdf1871702c70c644
+Author: addjuarez <addjuarez@yahoo.com>
+Date:   Wed Nov 2 21:53:18 2016 -0500
+
+    Uploaded pillar template
+
+commit 73a00e3e8fc402f6f2f69db6efd19977fe60af36
+Author: Charles Tian <c.y.t@utexas.edu>
+Date:   Thu Nov 3 02:44:04 2016 +0000
+
+    Passing data works
+
+commit feb678fef7e052409a41c6c23003550a58b081a5
+Merge: 6589aa5 e430a75
+Author: Lior Vansteenkiste <lior@cs.utexas.edu>
+Date:   Wed Nov 2 20:34:25 2016 -0500
+
+    Merge branch 'dev' of https://github.com/chyt/cs373-idb into dev
+
+commit 6589aa59a0984691285232681025f32986c5a8c3
+Author: Lior Vansteenkiste <lior@cs.utexas.edu>
+Date:   Wed Nov 2 20:34:21 2016 -0500
+
+    slight changes to about, api and models
+
+commit ed670459738308f9cab601dcfa2b0dab10f71285
+Author: Eric Erickson <egoraea@gmail.com>
+Date:   Wed Nov 2 20:32:03 2016 -0500
+
+    Updating to latest version of models
+
+commit e430a75444ff9aa80a89740b732d074133bff320
+Author: addjuarez <addjuarez@yahoo.com>
+Date:   Wed Nov 2 20:00:52 2016 -0500
+
+    adjusted spacing
+
+commit 0191dc1f1361e8194b94946a9bd946e19196fde1
+Author: Eric Erickson <egoraea@gmail.com>
+Date:   Wed Nov 2 19:32:03 2016 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit caae76ce8de0c3757470fd03e267d8b5d42bd900
+Author: Lior Vansteenkiste <lior@cs.utexas.edu>
+Date:   Wed Nov 2 19:02:59 2016 -0500
+
+    Added some api functionality on back end
+
+commit 4220d3ae0fc77e2f0dc51c410e03326da9743fe0
+Author: rdshea3 <ryan.shea@utexas.edu>
+Date:   Wed Nov 2 13:53:56 2016 -0500
+
+    Create customapi.py
+
+commit 354c8c364ce5860080016a7ef3c3e37598c82a75
+Author: addjuarez <ajuarez@zenoss.com>
+Date:   Tue Nov 1 17:03:01 2016 -0500
+
+    Small html changes
+
+commit 4edd958fea8d402c20ad3acc9e32073acbaef437
+Author: LiorPSHS <LiorPSHS@gmail.com>
+Date:   Thu Oct 20 21:48:04 2016 -0500
+
+    Delete TechnicalReport.md
+
+commit d7352844f7fc22adbcea422d75d0f9d8577d432d
+Author: LiorPSHS <LiorPSHS@gmail.com>
+Date:   Thu Oct 20 21:27:03 2016 -0500
+
+    Update TechnicalReport.md
+
+commit eb47ad7fa4d4b9578c2d8557eef7ac58f9083c51
+Merge: 28f4f48 fe3dc97
+Author: Charles Tian <c.y.t@utexas.edu>
+Date:   Thu Oct 20 21:00:34 2016 -0500
+
+    merge
+
+commit 28f4f4898478f1ff3c657c05ce307549dd5ef590
+Merge: 454e93c a027323
+Author: Charles Tian <c.y.t@utexas.edu>
+Date:   Thu Oct 20 21:00:01 2016 -0500
+
+    merge
+
+commit fe3dc97fe92606aca23c0fd5253cd1abbcddff05
+Author: Charles Tian <c.y.t@utexas.edu>
+Date:   Thu Oct 20 22:31:57 2016 +0000
+
+    Integrated about page
+
+commit b428124320dc68d11378c5ecf42012211b331297
+Author: addjuarez <ajuarez@zenoss.com>
+Date:   Thu Oct 20 16:02:27 2016 -0500
+
+    add about page
+
+commit 16f8b6df09babd3ae77e8b7d82c3ff47dfd1eb1e
+Author: Eric Erickson <egoraea@gmail.com>
+Date:   Thu Oct 20 12:41:04 2016 -0500
+
+    Added intro to technical report
+
+commit a027323fdc923ae6e92b53315032130f6d4b60bc
+Author: Charles Tian <c.y.t@utexas.edu>
+Date:   Thu Oct 20 09:50:58 2016 +0000
+
+    Integrated new static pages
+
+commit dd0460915a34cb52aca8a14926a688981b6ec8b4
+Author: addjuarez <ajuarez@zenoss.com>
+Date:   Wed Oct 19 22:34:07 2016 -0500
+
+    added static pages
+
+commit 0567e194de6484029ef2ed8a494513935d2f3a62
+Author: Eric Erickson <egoraea@cs.utexas.edu>
+Date:   Wed Oct 19 20:09:47 2016 -0500
+
+    Writing for the models technical report
+
+commit 59482bd681a9ea9796c4f314f2bade3d68e0e295
+Merge: 139e970 ae52b33
+Author: Eric Erickson <egoraea@cs.utexas.edu>
+Date:   Wed Oct 19 19:47:28 2016 -0500
+
+    Merge branch 'dev' of https://github.com/chyt/cs373-idb into dev
+
+commit 139e9702d3a398ca7beeb4a3a40583a318113ac7
+Author: Eric Erickson <egoraea@cs.utexas.edu>
+Date:   Wed Oct 19 19:47:17 2016 -0500
+
+    UML Tech report
+
+commit ae52b330450554502a97c4f2457f3b65c769ff3b
+Author: Charles Tian <c.y.t@utexas.edu>
+Date:   Wed Oct 19 19:33:28 2016 -0500
+
+    Fix grammar in technical report
+
+commit 7e82cb5b96145ea853fa0eca49473162d8cd0822
+Author: Charles Tian <c.y.t@utexas.edu>
+Date:   Thu Oct 20 00:26:42 2016 +0000
+
+    Travis CI test succeeded
+
+commit 86a153435d52c128f9337de4f310860745b995b2
+Author: Charles Tian <c.y.t@utexas.edu>
+Date:   Thu Oct 20 00:24:48 2016 +0000
+
+    travis test
+
+commit 5ec88ad5b01ea8c35a62e5866d70e40a9f88bc0d
+Author: Eric Erickson <egoraea@cs.utexas.edu>
+Date:   Wed Oct 19 19:20:08 2016 -0500
+
+    Travis
+
+commit 99b3d07c9f637ac49923a58aaf23356ab26dfeea
+Author: Charles Tian <c.y.t@utexas.edu>
+Date:   Thu Oct 20 00:18:44 2016 +0000
+
+    test
+
+commit 454e93cc2440add58273b7d9dfbca7141205f597
+Merge: 2c028fe 5c5c2da
+Author: Charles Tian <c.y.t@utexas.edd>
+Date:   Thu Oct 20 00:08:32 2016 +0000
+
+    Merge branch 'dev'
+
+commit 5c5c2da268d4d951640a7c12ddb65df07af9fd8d
+Author: Charles Tian <c.y.t@utexas.edd>
+Date:   Thu Oct 20 00:05:34 2016 +0000
+
+    Update travis.yml
+
+commit 659c272321eca1eb99b025f7230606887453f96f
+Author: Lior Vansteenkiste <lior@cs.utexas.edu>
+Date:   Wed Oct 19 18:57:04 2016 -0500
+
+    Added splash pages and data
+
+commit f11a81eabba7d812e00a4832c12b76d90de7c7e0
+Author: Charles Tian <c.y.t@utexas.edd>
+Date:   Wed Oct 19 23:51:54 2016 +0000
+
+    Remove run.py
+
+commit 712de419456545db5286b0befdf96c829865edf3
+Author: Charles Tian <c.y.t@utexas.edd>
+Date:   Wed Oct 19 23:48:36 2016 +0000
+
+    Fix models, add apiary, add log and pydoc
+
+commit 87e7e1b2e6b714b6f38ef3d36c540a793d658cc7
+Author: Eric Erickson <egoraea@cs.utexas.edu>
+Date:   Wed Oct 19 18:44:45 2016 -0500
+
+    makefile and travis.yml
+
+commit 2c028fe259419e9329e545f94019f26482d6a573
+Author: Eric Erickson <egoraea@gmail.com>
+Date:   Wed Oct 19 18:40:39 2016 -0500
+
+    adding year to Years
+
+commit d2f3dc7ca7906982853a976b077736ae4c8f84ca
+Merge: f486c55 7d28d48
+Author: Eric Erickson <egoraea@cs.utexas.edu>
+Date:   Wed Oct 19 18:25:36 2016 -0500
+
+    Changes to models.py
+
+commit f486c557a1a394100dafe5c0e78703272c1d2011
+Author: Eric Erickson <egoraea@cs.utexas.edu>
+Date:   Wed Oct 19 18:21:04 2016 -0500
+
+    Edits to models.py
+
+commit b8eef6bd96cd2217cd946725e4f752ff948c45f1
+Author: Eric Erickson <egoraea@gmail.com>
+Date:   Wed Oct 19 18:16:21 2016 -0500
+
+    Changing num_papers in Apiary
+
+commit c3dfd20cedaecb80c3f1551208db063b2f982c86
+Author: Eric Erickson <egoraea@gmail.com>
+Date:   Wed Oct 19 18:01:10 2016 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit 95654893b82affd1c87511fbdb5aa5e9cdacaf78
+Author: Charles Y. Tian <c.y.t@me.com>
+Date:   Wed Oct 19 17:14:33 2016 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit 7d28d48041968d4a3ee675908c659f3790402854
+Author: Charles Tian <c.y.t@utexas.edd>
+Date:   Wed Oct 19 20:05:52 2016 +0000
+
+    Finished technical report hosting section
+
+commit 083afae7d3334fd9cbd3b4572dc38c3e4e8e40f1
+Author: Charles Tian <c.y.t@utexas.edd>
+Date:   Wed Oct 19 19:52:24 2016 +0000
+
+    Merged accidental commits to master, working on hosting technical writeup
+
+commit cf45322388657d2cd88afe65cf8dcbce2ac1f558
+Merge: 45ae41d a8e7f1f
+Author: Charles Tian <c.y.t@utexas.edd>
+Date:   Wed Oct 19 19:12:16 2016 +0000
+
+    Merge remote-tracking branch 'origin' into dev
+
+commit a8e7f1ff5bc6a88b2a4ff47649f2eaa0ab713c82
+Author: rdshea3 <ryan.shea@utexas.edu>
+Date:   Wed Oct 19 12:29:03 2016 -0500
+
+    Sorry about so many commits, clarified idea -- STILL NEEDS A LOOK
+
+commit 84de70069041ed871a2f91c821bc2b61fdadfdd6
+Author: rdshea3 <ryan.shea@utexas.edu>
+Date:   Wed Oct 19 12:24:03 2016 -0500
+
+    grammar updates
+
+commit 1495b848292a2c507180aacba8ded02f99a82c27
+Author: rdshea3 <ryan.shea@utexas.edu>
+Date:   Wed Oct 19 12:15:43 2016 -0500
+
+    fixed formatting -- STILL NEEDS ATTENTION
+
+commit 34c5bfff448fcdfc0410fa51c7ff4196504c630a
+Author: rdshea3 <ryan.shea@utexas.edu>
+Date:   Wed Oct 19 12:14:58 2016 -0500
+
+    rdshea3 - techreport design details NEED MORE EYES
+    
+    Got two lines I wasn't sure what to write. Shouldn't be hard for whoever has a grasp over what I'm missing. Does need to be fixed though!
+
+commit 45ae41de591683bb9088eb80285ea10945c29ec2
+Author: Charles Tian <c.y.t@utexas.edd>
+Date:   Wed Oct 19 04:45:55 2016 +0000
+
+    Implemented basic 3 pillars
+
+commit 53de4595dc6f26d4600dd2a7701efa53178e38e7
+Author: Charles Tian <c.y.t@utexas.edd>
+Date:   Wed Oct 19 04:14:00 2016 +0000
+
+    Ignore appropriate python files
+
+commit 2bf2e8f213d6eeb34e4fc163100f56007c2c6cc4
+Merge: d9db881 514a68a
+Author: Charles Tian <c.y.t@utexas.edd>
+Date:   Wed Oct 19 04:12:32 2016 +0000
+
+    Merge master into dev
+
+commit 514a68a7195f1b75640fa2c6edc5a1a038909d87
+Author: Eric Erickson <egoraea@cs.utexas.edu>
+Date:   Tue Oct 18 21:59:19 2016 -0500
+
+    Fixing imports
+
+commit 61d76cf7e6f88bafb7d82297b4533704df9ec933
+Author: Eric Erickson <egoraea@cs.utexas.edu>
+Date:   Tue Oct 18 21:43:19 2016 -0500
+
+    Adding Sql models and unit tests for them
+
+commit 1b0320b4045a6678708aa34d46736754035959d7
+Author: Lior Vansteenkiste <lior@cs.utexas.edu>
+Date:   Mon Oct 17 18:09:59 2016 -0500
+
+    Decided on Pillars and attributes for each pillar. Got initial bootstrap theme and page up.
+
+commit d9db8811b69eef0f2ace2fc03f4194a5b43605a3
+Author: Charles Tian <c.y.t@utexas.edu>
+Date:   Sun Oct 16 23:50:53 2016 +0000
+
+    Setup initial site using Flask example code. Closes #5
+
+commit 271db6ea0adaf11a4babbcbb262327e0abcb33e8
+Author: Charles Y. Tian <c.y.t@me.com>
+Date:   Sun Oct 16 22:22:33 2016 +0000
+
+    Reorganize files
+
+commit b2b6a1bef020ff33c3de57c0516c013ffc99795f
+Author: Charles Tian <cyt@cs.utexas.edu>
+Date:   Sun Oct 16 17:22:08 2016 -0500
+
+    Delete everything
+
+commit 8264e720a00e51009b8f3f80790b6bbac01a3b72
+Author: Charles Tian <cyt@cs.utexas.edu>
+Date:   Sun Oct 16 16:38:19 2016 -0500
+
+    Add example flask site
+
+commit 586ca7e5e0ea63bad8162c650a6b0be96eb04f78
+Author: Charles Tian <cyt@cs.utexas.edu>
+Date:   Sun Oct 16 15:57:30 2016 -0500
+
+    Add technical report
