@@ -6,6 +6,7 @@ from flask_script import Manager, Shell
 from models import get_papers, get_paper, get_journals, get_journal, get_years, get_year, get_papers_by_year, get_papers_by_journal
 import requests
 import json
+from googleimages import get_top_image
 
 app = Flask(__name__)
 
@@ -84,7 +85,9 @@ def journal(journal_id):
 	paper_api_url = "http://researchpapers.me/api/papers/journal/" + str(journal_id)
 	p = requests.get(paper_api_url)
 	paper_dict = json.loads(p.text)
-	return render_template('journal.html', data=json_dict, paper_data=paper_dict)
+	journal_name = str(json_dict["journals"]["name"])
+	journal_img = get_top_image(journal_name)
+	return render_template('journal.html', data=json_dict, paper_data=paper_dict, img=journal_img)
 
 @app.route('/year<int:year_id>', methods=['GET'])
 def year(year_id):
