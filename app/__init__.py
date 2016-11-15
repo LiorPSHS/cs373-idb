@@ -85,7 +85,7 @@ def journal(journal_id):
 	paper_api_url = "http://researchpapers.me/api/papers/journal/" + str(journal_id)
 	p = requests.get(paper_api_url)
 	paper_dict = json.loads(p.text)
-	journal_name = str(json_dict["journals"]["name"])
+	journal_name = json_dict["journals"]["name"]
 	journal_img = get_top_image(journal_name)
 	return render_template('journal.html', data=json_dict, paper_data=paper_dict, img=journal_img)
 
@@ -143,3 +143,4 @@ def api_year(year_id):
 
 if __name__ == "__main__":
 	app.run(debug=True)
+	#journal(128)
