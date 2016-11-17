@@ -2,7 +2,7 @@ FILES :=                              \
     .gitignore                        \
     .travis.yml                       \
     apiary.apib                       \
-    IDB2.log                          \
+    IDB3.log                          \
     models.html                       \
     app/models.py                     \
     app/tests.py                      \

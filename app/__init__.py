@@ -6,6 +6,7 @@ from flask_script import Manager, Shell
 from models import get_papers, get_paper, get_journals, get_journal, get_years, get_year, get_papers_by_year, get_papers_by_journal
 import requests
 import json
+import random
 from googleimages import get_top_image
 
 app = Flask(__name__)
@@ -36,6 +37,37 @@ def header():
 @app.route('/about')
 def about():
 	return render_template('about.html')
+
+#@app.route('/music')
+#def music():
+#	return render_template('music.html')
+
+@app.route('/music')
+def music():
+	
+	rand = random.randint(1,14800)
+	api_url = "http://www.imusicdb.me/api/tracks/" + str(rand)
+	d = requests.get( api_url)
+	json_dict = json.loads(d.text)
+	data = json_dict
+	
+	rand = random.randint(1,25)
+		
+	album_id = data["tracks"][rand]["album_id"] 
+	name = data["tracks"][rand]["name"]
+	artist = data["tracks"][rand]["main_artist_id"] 
+	preview_url = data["tracks"][rand]["preview_url"] 
+	duration = data["tracks"][rand]["duration"] 
+	track_no = data["tracks"][rand]["track_no"]  
+	
+	api_url = "http://www.imusicdb.me/api/artist/" + str(artist)
+	d = requests.get(api_url)
+	json_dict = json.loads(d.text)
+	artist = json_dict["artist"]["name"]
+	
+	
+
+	return render_template('music.html',album_id = album_id,name = name, artist = artist, preview_url = preview_url,duration = duration, track_no = track_no )
 
 # Unit tests
 
@@ -140,6 +172,8 @@ def api_years(page_number):
 def api_year(year_id):
 	year = get_year(year_id)
 	return jsonify(year)
+
+
 
 if __name__ == "__main__":
 	app.run(debug=True)
