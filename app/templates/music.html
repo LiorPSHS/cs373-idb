@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+      <title>Journal Details</title>
+      <!-- Bootstrap -->
+      <link href="http://104.131.163.33/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <link href="http://104.131.163.33/bootstrap/css/yetibootstrap.min.css" rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+   </head>
+   <body ng-app="" background="https://www.googleplaymusicdesktopplayer.com/img/par1.jpg">
+      <div ng-include="'header.html'"></div>
+      <div class="row">
+         <div class="col-md-2"></div>
+         <div class="col-md-8">
+            <div class="panel panel-default">
+               <div class="panel-body">
+                <input class="btn btn-primary" type="button" value="Get Random Song" onClick="window.location.reload()">
+
+
+               </div>
+               <div class="panel-footer">
+                 <h3><b> Album Id:</b> {{ album_id }}</h3>
+                 <h3><b> Track no:</b> {{ track_no }}</h3>
+                 <h3> <b> Title:</b> {{ name }}</h3>
+                 <h3> <b> Artist:</b> {{ artist }}</h3>
+                 <h3> <b> Length:</b> {{ duration }}</h3>
+                 <audio src="{{ preview_url }}" controls>
+                </audio>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-8">
+               </div>
+               <div class="col-md-4">
+               </div>
+            </div>
+         </div>
+         <div class="col-md-2"></div>
+      </div>
+      <!-- div (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="http://104.131.163.33/bootstrap/js/bootstrap.min.js"></script>
+   </body>
+</html>
