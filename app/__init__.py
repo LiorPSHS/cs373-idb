@@ -38,13 +38,8 @@ def header():
 def about():
         return render_template('about.html')
 
-#@app.route('/music')
-#def music():
-#       return render_template('music.html')
-
 @app.route('/music')
 def music():
-
         rand = random.randint(1,14800)
         api_url = "http://www.imusicdb.me/api/tracks/" + str(rand)
         d = requests.get( api_url)
@@ -65,40 +60,7 @@ def music():
         json_dict = json.loads(d.text)
         artist = json_dict["artist"]["name"]
 
-
-
         return render_template('music.html',album_id = album_id,name = name, artist = artist, preview_url = preview_url,duration = duration, track_no = track_no )
-
-#@app.route('/music')
-#def music():
-#	return render_template('music.html')
-
-@app.route('/music')
-def music():
-	
-	rand = random.randint(1,14800)
-	api_url = "http://www.imusicdb.me/api/tracks/" + str(rand)
-	d = requests.get( api_url)
-	json_dict = json.loads(d.text)
-	data = json_dict
-	
-	rand = random.randint(1,25)
-		
-	album_id = data["tracks"][rand]["album_id"] 
-	name = data["tracks"][rand]["name"]
-	artist = data["tracks"][rand]["main_artist_id"] 
-	preview_url = data["tracks"][rand]["preview_url"] 
-	duration = data["tracks"][rand]["duration"] 
-	track_no = data["tracks"][rand]["track_no"]  
-	
-	api_url = "http://www.imusicdb.me/api/artist/" + str(artist)
-	d = requests.get(api_url)
-	json_dict = json.loads(d.text)
-	artist = json_dict["artist"]["name"]
-	
-	
-
-	return render_template('music.html',album_id = album_id,name = name, artist = artist, preview_url = preview_url,duration = duration, track_no = track_no )
 
 # Unit tests
 
