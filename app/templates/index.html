@@ -26,16 +26,25 @@
       <div class="container">
         <h2>Research Paper Directory</h2>
         <p>Welcome to the RPD, a tool designed to help you review research papers. You can organize the publications by the year they were published, the journal that printed it, or view a vast list of documents.</p>
-        <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p> -->
+      </div>
+    </div>
+
+    <div class="container" style="background: #FFFFFF;margin-bottom:24px;";>
+      <div class="row" bgcolor="#FFFFFF">
+        <form onsubmit="this.action='/' + this.searchBox.value;" action="" method="get">
+          <div class="form-group" style="margin:12px">
+            <input class="form-control" id="searchBox" type="text" placeholder="Search our Database..." />
+            <input type="submit" style="display:none" />
+          </div>
+        </form>
       </div>
     </div>
 
     <div class="container" style = "background: #FFFFFF";>
-      <!-- Example row of columns -->
       <div class="row" bgcolor="#FFFFFF">
         <div class="col-md-4" bgcolor="#FFFFFF">
           <h3>Browse Research Papers</h3>
-          <p>See the list of research papers stored.</p>
+          <p>See our list of research papers</p>
           <p><a class="btn btn-default" href="/papers1" role="button">View more &raquo;</a></p>
         </div>
         <div class="col-md-4">
@@ -49,13 +58,8 @@
           <p><a class="btn btn-default" href="/years1" role="button">View details &raquo;</a></p>
         </div>
       </div>
-
-      <hr>
-
-      <footer>
-        <p></p>
-      </footer>
     </div>
+
     <!-- div (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
