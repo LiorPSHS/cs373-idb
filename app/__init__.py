@@ -3,7 +3,7 @@ import shlex
 from os import path
 from flask import Flask, render_template, request, jsonify
 from flask_script import Manager, Shell
-from models import get_papers, get_paper, get_journals, get_journal, get_years, get_year, get_papers_by_year, get_papers_by_journal
+from models import get_papers, get_paper, get_journals, get_journal, get_years, get_year, get_papers_by_year, get_papers_by_journal, get_search_results
 import requests
 import json
 import random
@@ -60,7 +60,14 @@ def music():
         json_dict = json.loads(d.text)
         artist = json_dict["artist"]["name"]
 
-        return render_template('music.html',album_id = album_id,name = name, artist = artist, preview_url = preview_url,duration = duration, track_no = track_no )
+        return render_template('music.html',album_id = album_id,name = name, artist = artist, preview_url = preview_url,duration = duration, track_no = track_no)
+
+@app.route('/<string:search_strings>', methods=['GET'])
+def search(search_strings):
+	api_url = "http://researchpapers.me/api/search/" + search_strings
+	d = requests.get(api_url)
+	json_dict = json.loads(d.text)
+	return render_template('search.html', data=json_dict, search_str=search_strings)
 
 # Unit tests
 
@@ -126,6 +133,12 @@ def year(year_id):
         return render_template('year.html', data=json_dict, paper_data=paper_dict)
 
 # API
+@app.route('/api/search/<string:search_string>', methods=['GET'])
+def api_search(search_string):
+	queries = search_string.split(' ')
+	results = get_search_results(queries)
+	return jsonify(results)
+
 @app.route('/api/papers/<int:page_number>', methods=['GET'])
 def api_papers(page_number):
         papers = get_papers(page_number)
@@ -166,10 +179,7 @@ def api_year(year_id):
         year = get_year(year_id)
         return jsonify(year)
 
-
-
-
-
 if __name__ == "__main__":
         app.run(debug=True)
-        #journal(128)
+
+

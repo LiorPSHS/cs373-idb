@@ -56,6 +56,42 @@ class Years(object):
 	"""
 	pass
 
+# Search API
+
+def get_search_results(queries):
+	papers_and = []
+	journals_and = []
+	papers_or = []
+	journals_or = []
+	search_query_and(queries, papers_and, journals_and)
+	for query in queries:
+		search_query_or(query, papers_and, journals_and, papers_or, journals_or)
+	return { 'papers_and': [paper_json(paper) for paper in papers_and],
+		 'papers_or': [paper_json(paper) for paper in papers_or],
+		 'journals_and': [journal_json(journal) for journal in journals_and],
+		 'journals_or': [journal_json(journal) for journal in journals_or] }
+
+def search_query_and(queries, papers, journals):
+	paper_results = session.query(Papers)
+	journal_results = session.query(Journals)
+	for query in queries:
+		query_string = '%' + query + '%'
+		paper_results = paper_results.filter(Papers.name.ilike(query_string))
+		journal_results = journal_results.filter(Journals.name.ilike(query_string))
+	papers.extend(paper_results.limit(15))
+	journals.extend(journal_results.limit(15))
+
+def search_query_or(query, papers_and, journals_and, papers_or, journals_or):
+	query_string = '%' + query + '%'
+	paper_results = session.query(Papers).filter(Papers.name.ilike(query_string)).limit(15)
+	for paper in paper_results:
+		if paper not in papers_and and paper not in papers_or:
+			papers_or.append(paper)
+	journal_results = session.query(Journals).filter(Journals.name.ilike(query_string)).limit(15)
+	for journal in journal_results:
+		if journal not in journals_and:
+			journals_or.append(journal)
+
 # Paper API
 
 """
