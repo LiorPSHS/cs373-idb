@@ -257,3 +257,32 @@ Research Papers is a API to query the attributes of papers, the journals they we
                 }
             ]
         }
+        
+## Search [/search/{search_string}]
+
++ Parameters
+    + search_string (string) - the search query
+    
+### Search for a string [GET]
+
++ Response 200 (apllication/json)
+
+        {
+           "id" : 1,
+            "year": 1995
+            "num_papers" : 45,
+            "top_subject" : "Physics",
+            "top_country" : "China",
+            "top_journal" : "Frank's Journal",
+            "top_journal_count" : 532,
+            "papers" : [
+                {
+                    "id" : 1,
+                    "name" : "Paper"
+                },
+                {
+                    "id" : 2,
+                    "name" : "Fying in the sky"
+                }
+            ]
+        }
